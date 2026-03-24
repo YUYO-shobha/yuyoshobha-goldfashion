@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>YUYOSHOBHA GOLD & FASHION</title>
+    <title>Shobha Gold & Fashion</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,6 +12,14 @@
             background: #fff8f0;
         }
 
+        /* STICKY TOPBAR */
+        .topbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
         header {
             background: black;
             color: gold;
@@ -19,12 +27,11 @@
             padding: 15px;
         }
 
-        /* STICKY NAVBAR */
-       nav {
-    background: gold;
-    padding: 10px;
-    text-align: center;
-}
+        nav {
+            background: gold;
+            padding: 10px;
+            text-align: center;
+        }
 
         nav a {
             margin: 10px;
@@ -39,6 +46,7 @@
 
         /* HERO */
         .hero {
+            margin-top: 140px;
             background: url('https://images.unsplash.com/photo-1617038260897-41a1f14a4c3b') center/cover;
             color: white;
             text-align: center;
@@ -143,18 +151,22 @@
 
 <body>
 
-<header>
-    <h1>✨ YUYO-SHOBHA GOLD & FASHION ✨</h1>
-    <p>SHINE IN STYLE| ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
-</header>
+<!-- TOPBAR -->
+<div class="topbar">
+    <header>
+        <h1>✨ Shobha Gold & Fashion ✨</h1>
+        <p>Shine in Style | ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
+    </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#gold">Gold</a>
-    <a href="#fashion">Fashion</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#gold">Gold</a>
+        <a href="#fashion">Fashion</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</div>
 
+<!-- HERO -->
 <div class="hero">
     <h1>Luxury Gold & Fashion</h1>
     <p>Best Collection in Your City</p>
@@ -213,9 +225,9 @@
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>📞 Contact</h2>
-    <p>Phone: 9876543210</p>
-    <p>Address: Your Shop Address</p>
+    <h2 style="text-align:center;">📞 Contact</h2>
+    <p style="text-align:center;">Phone: 9876543210</p>
+    <p style="text-align:center;">Address: Your Shop Address</p>
 
     <iframe src="https://maps.google.com/maps?q=bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed"
         width="100%" height="300">
