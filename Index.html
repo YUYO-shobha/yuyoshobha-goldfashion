@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shobha Gold & Fashion</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #fff8f0;
+        }
+
+        header {
+            background: black;
+            color: gold;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* STICKY NAVBAR */
+        nav {
+            background: gold;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HERO */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1617038260897-41a1f14a4c3b') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        /* SEARCH */
+        .search {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        /* FILTER BUTTONS */
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            background: black;
+            color: gold;
+            cursor: pointer;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 220px;
+            margin: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card p {
+            padding: 10px;
+        }
+
+        .btn {
+            display: block;
+            background: green;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /* INSTAGRAM */
+        .instagram {
+            text-align: center;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: green;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>✨ Shobha Gold & Fashion ✨</h1>
+    <p>Shine in Style | ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#gold">Gold</a>
+    <a href="#fashion">Fashion</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    <h1>Luxury Gold & Fashion</h1>
+    <p>Best Collection in Your City</p>
+</div>
+
+<!-- SEARCH -->
+<div class="search">
+    <input type="text" placeholder="Search products...">
+</div>
+
+<!-- FILTER -->
+<div class="filters">
+    <button>All</button>
+    <button>Gold</button>
+    <button>Sarees</button>
+</div>
+
+<!-- PRODUCTS -->
+<section>
+    <h2 style="text-align:center;">Our Collection</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <p>Gold Necklace</p>
+            <a class="btn" href="https://wa.me/919876543210">Enquire</a>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <p>Gold Bangles</p>
+            <a class="btn" href="#">Enquire</a>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <p>Silk Saree</p>
+            <a class="btn" href="#">Enquire</a>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <p>Designer Dress</p>
+            <a class="btn" href="#">Enquire</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- INSTAGRAM -->
+<div class="instagram">
+    <h2>Follow Us on Instagram</h2>
+    <p>@yourshopname</p>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>📞 Contact</h2>
+    <p>Phone: 9876543210</p>
+    <p>Address: Your Shop Address</p>
+
+    <iframe src="https://maps.google.com/maps?q=bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="300">
+    </iframe>
+</section>
+
+<footer>
+    <p>© 2026 Shobha Gold & Fashion</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919876543210">💬</a>
+
+</body>
+</html>
