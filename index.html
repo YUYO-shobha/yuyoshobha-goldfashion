@@ -45,13 +45,12 @@
         }
 
         /* HERO */
-        .hero {
-            margin-top: 140px;
-            background: url('https://images.unsplash.com/photo-1617038260897-41a1f14a4c3b') center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
+       .hero {
+    margin-top: 120px;
+    padding: 20px;
+    text-align: center;
+    background: #fff8f0;
+}
 
         .hero h1 {
             font-size: 40px;
@@ -84,11 +83,12 @@
         }
 
         /* PRODUCTS */
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+     .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
 
         .card {
             width: 220px;
@@ -104,11 +104,11 @@
             transform: scale(1.05);
         }
 
-        .card img {
+  .card img {
     width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
-}
-        }
 
         .card p {
             padding: 10px;
@@ -208,12 +208,13 @@
 </div>
 
         <div class="card">
-            <img src="kurta1.png" width="200">
+            <img src="kurta1.png">
             <p>plain Kurta</p>
             <p>Price: ₹499</p>
             <a href="https://wa.me/919686032980?text=I%20am%20interested%20in%20Beatiful%20Kurta%20Chain"
            class="btn" target="_blank">
            Enquire
+            </a>
         </div>
 
         <div class="card">
@@ -264,7 +265,7 @@
         </div>
         
   <div class="card">
-            <img src="earings2.png">
+            <img src="earrings2.png">
             <p>Earrings</p>
             <p>Price: ₹600</p>
             <a href="https://wa.me/919686032980?text=I%20am%20interested%20in%20Diamond%20Earrings%20Chain"
