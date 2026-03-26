@@ -181,7 +181,7 @@
 
 <!-- SEARCH -->
 <div class="search">
-    <input type="text" placeholder="Search products...">
+    <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
 </div>
 
 <!-- FILTER -->
@@ -202,7 +202,7 @@
         <section id="sarees">
     <h2 style="text-align:center;">Sarees</h2>
 
-    <div class="products">
+    <div class="products" id="productList">
 
         <div class="card">
     <img src="kurta.png">
@@ -385,6 +385,21 @@
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919686032980">💬</a>
+<script>
+function searchProducts() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let products = document.getElementsByClassName("card");
 
+    for (let i = 0; i < products.length; i++) {
+        let text = products[i].innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            products[i].style.display = "block";
+        } else {
+            products[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
