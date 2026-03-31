@@ -188,56 +188,50 @@
 /* ===============================
    ABOUT + CONTACT SECTION
 ================================ */
+/* MAIN CONTAINER */
 .info-section {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 25px;
     padding: 40px 20px;
-    background: #f9f9f9;
+    align-items: stretch; /* equal height */
 }
 
+/* BOX DESIGN */
 .info-box {
-    flex: 1;
-    min-width: 300px;
     background: #ffffff;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    height: 100%; /* fix uneven height */
 }
 
-.info-box:hover {
-    transform: translateY(-5px);
-}
-
-/* Headings */
+/* HEADINGS */
 .info-box h2 {
-    margin-bottom: 12px;
     color: var(--gold);
-    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-/* Text */
+/* TEXT */
 .info-box p {
-    color: #555;
     line-height: 1.6;
+    color: #555;
 }
 
-/* Opening highlight */
-.opening {
-    color: red;
-    font-weight: bold;
-}
-
-/* ===============================
-   GOOGLE MAP
-================================ */
+/* MAP FIX */
 .info-box iframe {
     width: 100%;
-    height: 260px;
+    height: 250px;
     border: none;
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .info-section {
+        grid-template-columns: 1fr; /* stack */
+    }
 }
 
 /* ===============================
@@ -526,41 +520,30 @@ footer span {
 <!-- CONTACT -->
 <section class="info-section">
 
-    <!-- ABOUT US -->
+    <!-- ABOUT -->
     <div class="info-box">
         <h2>About Us</h2>
         <p>
-            Welcome to <b>YUYO Shobha Fashion Hub</b>.  
-            We offer beautiful jewellery, sarees, and fashion collections
-            with the best quality and affordable prices.
+            YUYO Shobha Fashion Hub is your destination for stylish
+            jewellery, sarees, and fashion collections.
         </p>
-        <p style="color:red; font-weight:bold;">✨ Opening Soon ✨</p>
     </div>
 
     <!-- CONTACT -->
-    <div class="info-box" id="contact">
-        <h2>Contact</h2>
-        <p>📍 RMS colony, Bhattarahalli, KR Puram, Bengaluru</p>
-        <p>📞 9686032980</p>
-
-        <iframe src="https://maps.google.com/maps?q=bangalore&output=embed"></iframe>
-    </div>
-<!-- GOOGLE MAP -->
     <div class="info-box">
-    <h2>Our Location</h2>
-        
-    <p>
-        RMS Colony, Bhattarahalli,<br>
-        KR Puram, Bangalore - 560049
-    </p>
+        <h2>Contact Us</h2>
+        <p>📍 RMS Colony, Bhattarahalli, KR Puram, Bangalore - 560049</p>
+        <p>📞 9686032980</p>
+    </div>
 
-   <a href="https://www.google.com/maps?q=RMS+Colony+Bhattarahalli+KR+Puram+Bangalore+560049" 
-   target="_blank" 
-   class="btn">
-   📍 Get Directions
-</a>
-    </iframe>
-</div>
+    <!-- MAP -->
+    <div class="info-box">
+        <h2>Our Location</h2>
+        <iframe 
+        src="https://maps.google.com/maps?q=RMS%20Colony%20Bhattarahalli%20KR%20Puram%20Bangalore%20560049&output=embed">
+        </iframe>
+    </div>
+
 </section>
 
 <footer>
