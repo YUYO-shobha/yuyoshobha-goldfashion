@@ -225,7 +225,7 @@ footer {
     <a href="#">Home</a>
     <a href="#jewellery">Jewellery</a>
     <a href="#sarees">Sarees</a>
-    <a href="#kurtas">Kurtas</a>
+       <a href="#kurta">Kurta</a>
     <a href="#contact">Contact</a>
 </nav>
 </div>
@@ -247,12 +247,11 @@ footer {
 
 <!-- FILTER -->
 <div class="filters">
-    <button>All</button>
-    <button>Jewellery</button>
-    <button>Sarees</button>
-    <button>Kurtas</button>
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('jewellery')">Jewellery</button>
+    <button onclick="filterProducts('saree')">Sarees</button>
+    <button onclick="filterProducts('kurta')">Kurtas</button>
 </div>
-
 
 </section>
 
@@ -267,7 +266,7 @@ footer {
 
     <div class="products" id="productList">
 
-        <div class="card">
+        <div class="card kurta">
     <img src="kurta.png">
     <p>Kurta</p>
     <p>Price: ₹1000</p>
@@ -277,7 +276,7 @@ footer {
     </a>
 </div>
 
-        <div class="card">
+        <div class="card kurta">
             <img src="kurta1.png">
             <p>plain Kurta</p>
             <p>Price: ₹499</p>
@@ -287,7 +286,7 @@ footer {
             </a>
         </div>
 
-        <div class="card">
+        <div class="card jewellery">
             <img src="chain2.png">
             <p>Red chain</p>
             <p>Price: ₹499</p>
@@ -297,7 +296,7 @@ footer {
         </a>
         </div>
 
-          <div class="card">
+          <div class="card jewellery">
             <img src="earrings1.png">
             <p>Earrings</p>
             <p>Price: ₹500</p>
@@ -307,7 +306,7 @@ footer {
            </a>
         </div>
         
-  <div class="card">
+  <div class="card jewellery">
             <img src="earrings2.png">
             <p>Earrings</p>
             <p>Price: ₹600</p>
@@ -317,7 +316,7 @@ footer {
             </a>
         </div>
         
-          <div class="card">
+          <div class="card jewellery">
             <img src="earrings3.png">
             <p>Chain</p>
             <p>Price: ₹900</p>
@@ -327,7 +326,7 @@ footer {
             </a>
         </div>
         
-          <div class="card">
+          <div class="card jewellery">
             <img src="necklace.png">
             <p>Necklace</p>
             <p>Price: ₹1000</p>
@@ -336,7 +335,7 @@ footer {
            Enquire
            </a>
         </div>
-          <div class="card">
+          <div class="card saree">
             <img src="saree1.png">
             <p>Saree</p>
             <p>Price: ₹300</p>
@@ -346,7 +345,7 @@ footer {
           </a>
         </div>
         
-          <div class="card">
+          <div class="card saree">
             <img src="saree2.png">
             <p>Chain</p>
             <p>Price: ₹500</p>
@@ -356,7 +355,7 @@ footer {
             </a>
         </div>
         
-          <div class="card">
+          <div class="card saree">
             <img src="saree3.png">
             <p>Saree</p>
             <p>Price: ₹1000</p>
@@ -366,7 +365,7 @@ footer {
             </a>
         </div>
         
-          <div class="card">
+          <div class="card saree">
             <img src="saree4.png">
             <p>Saree</p>
             <p>Price: ₹2000</p>
@@ -376,7 +375,7 @@ footer {
            </a>
         </div>
         
-          <div class="card">
+          <div class="card saree">
             <img src="saree5.png">
             <p>Saree</p>
             <p>Price: ₹3000</p>
@@ -412,16 +411,18 @@ footer {
 
 <a class="whatsapp" href="https://wa.me/919686032980">💬</a>
 <script>
-function searchProducts() {
-    let input = document.getElementById("searchBox").value.toLowerCase();
+function filterProducts(category) {
     let products = document.getElementsByClassName("card");
 
     for (let i = 0; i < products.length; i++) {
-        let text = products[i].innerText.toLowerCase();
 
-        if (text.includes(input)) {
+        if (category === "all") {
             products[i].style.display = "block";
-        } else {
+        } 
+        else if (products[i].classList.contains(category)) {
+            products[i].style.display = "block";
+        } 
+        else {
             products[i].style.display = "none";
         }
     }
