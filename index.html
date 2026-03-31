@@ -185,57 +185,91 @@
             .card img { height: 140px; }
             header h1 { font-size: 1.1rem; }
         }
-        .about {
-    text-align: center;
-    padding: 20px;
+/* ===============================
+   ABOUT + CONTACT SECTION
+================================ */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
+    background: #f9f9f9;
 }
 
+.info-box {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Headings */
+.info-box h2 {
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 20px;
+}
+
+/* Text */
+.info-box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Opening highlight */
 .opening {
     color: red;
     font-weight: bold;
 }
 
-.contact {
-    text-align: center;
-    padding: 20px;
-}
-
-iframe {
+/* ===============================
+   GOOGLE MAP
+================================ */
+.info-box iframe {
     width: 100%;
-    height: 250px;
+    height: 260px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
+/* ===============================
+   FOOTER (COPYRIGHT)
+================================ */
 footer {
-    padding: 15px;
+    background: #000;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 10px;
     font-size: 14px;
-}
-        /* ABOUT + CONTACT PROFESSIONAL */
-.info-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    letter-spacing: 0.5px;
 }
 
-.info-box {
-    flex: 1;
-    min-width: 280px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+footer p {
+    margin: 5px 0;
 }
 
-.info-box h2 {
-    margin-bottom: 10px;
+footer span {
+    color: var(--gold);
+    font-weight: bold;
 }
 
-iframe {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    margin-top: 10px;
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
 }
-        <style>
+    
 .product-gallery img {
     width: 200px;
     margin: 10px;
@@ -492,12 +526,13 @@ iframe {
 <!-- CONTACT -->
 <section class="info-section">
 
-    <!-- ABOUT -->
+    <!-- ABOUT US -->
     <div class="info-box">
         <h2>About Us</h2>
         <p>
-            YUYO Shobha Fashion Hub offers stylish 1 gram gold jewellery,
-            sarees and kurtas at affordable prices.
+            Welcome to <b>YUYO Shobha Fashion Hub</b>.  
+            We offer beautiful jewellery, sarees, and fashion collections
+            with the best quality and affordable prices.
         </p>
         <p style="color:red; font-weight:bold;">✨ Opening Soon ✨</p>
     </div>
@@ -510,7 +545,22 @@ iframe {
 
         <iframe src="https://maps.google.com/maps?q=bangalore&output=embed"></iframe>
     </div>
+<!-- GOOGLE MAP -->
+    <div class="info-box">
+    <h2>Our Location</h2>
+        
+    <p>
+        RMS Colony, Bhattarahalli,<br>
+        KR Puram, Bangalore - 560049
+    </p>
 
+   <a href="https://www.google.com/maps?q=RMS+Colony+Bhattarahalli+KR+Puram+Bangalore+560049" 
+   target="_blank" 
+   class="btn">
+   📍 Get Directions
+</a>
+    </iframe>
+</div>
 </section>
 
 <footer>
