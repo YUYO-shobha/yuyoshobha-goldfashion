@@ -300,72 +300,47 @@ footer span {
     }
 }
     
-.product-gallery img {
-    width: 200px;
-    margin: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+/* ===== QUICK VIEW MODAL ===== */
 
-.product-gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Modal Background */
 .modal {
     display: none;
     position: fixed;
-    z-index: 999;
-    padding-top: 40px;
+    z-index: 2000;
+    padding-top: 60px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.95);
+    background: rgba(0,0,0,0.8);
 }
 
-/* Image */
 .modal-content {
-    display: block;
+    background: #fff;
     margin: auto;
-    max-width: 80%;
-    max-height: 80%;
+    padding: 20px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
     border-radius: 10px;
-    transition: transform 0.3s;
 }
 
-/* Zoom effect */
-.modal-content:hover {
-    transform: scale(1.1);
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-/* Close Button */
 .close {
     position: absolute;
     top: 20px;
-    right: 35px;
+    right: 25px;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
 }
 
-/* Next & Prev Buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-size: 40px;
-    padding: 10px;
-    user-select: none;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-.prev:hover, .next:hover {
-    color: gold;
+.price {
+    font-weight: bold;
+    margin: 10px 0;
 }
 </style>
     </style>
@@ -426,14 +401,18 @@ footer span {
 
     <div class="products" id="productList">
 
-        <div class="card kurta">
-    <img src="kurta.png">
+<div class="card kurta">
+
+    <img src="kurta.png" onclick="openModal('kurta.png')">
+
     <p>Kurta</p>
     <p>Price: ₹1000</p>
-    <a href="https://wa.me/919686032980?text=I%20am%20interested%20in%20Plain%20Kurta%20Chain"
-           class="btn" target="_blank">
-           Enquire
+
+    <a href="https://wa.me/919686032980?text=I am interested in Kurta"
+       class="btn" target="_blank">
+       Enquire
     </a>
+
 </div>
 
         <div class="card kurta">
@@ -601,81 +580,35 @@ footer span {
         
         <a class="whatsapp" href="https://wa.me/919686032980">💬</a>
 
-        <div class="product-gallery">
-    <img src="img1.jpg" onclick="openModal(0)">
-    <img src="img2.jpg" onclick="openModal(1)">
-    <img src="img3.jpg" onclick="openModal(2)">
-</div>
+       <div id="quickView" class="modal">
 
-<!-- Modal -->
-<div id="modal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
 
-    <img id="modalImg" class="modal-content">
+    <div class="modal-content">
 
-    <!-- Next / Prev -->
-    <a class="prev" onclick="changeImage(-1)">❮</a>
-    <a class="next" onclick="changeImage(1)">❯</a>
+        <img id="mainImage" src="kurta.png">
+
+        <h3>Kurta</h3>
+        <p class="price">₹1000</p>
+
+        <a href="https://wa.me/919686032980?text=I want Kurta"
+           class="btn" target="_blank">
+           Order on WhatsApp
+        </a>
+
+    </div>
+
 </div>
-
-<a class="whatsapp" href="https://wa.me/919686032980">💬</a>
-
 <script>
-function filterProducts(category) {
-    let products = document.getElementsByClassName("card");
-
-    for (let i = 0; i < products.length; i++) {
-
-        if (category === "all") {
-            products[i].style.display = "block";
-        } 
-        else if (products[i].classList.contains(category)) {
-            products[i].style.display = "block";
-        } 
-        else {
-            products[i].style.display = "none";
-        }
-    }
-}
-
-/* ✅ Your modal code continues in SAME script */
-
-let images = ["img1.jpg", "img2.jpg", "img3.jpg"];
-let currentIndex = 0;
-
-function openModal(index) {
-    document.getElementById("modal").style.display = "block";
-    currentIndex = index;
-    showImage();
+function openModal(imageSrc) {
+    document.getElementById("quickView").style.display = "block";
+    document.getElementById("mainImage").src = imageSrc;
 }
 
 function closeModal() {
-    document.getElementById("modal").style.display = "none";
+    document.getElementById("quickView").style.display = "none";
 }
-
-function changeImage(step) {
-    currentIndex += step;
-
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-    } else if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
-
-    showImage();
-}
-
-function showImage() {
-    document.getElementById("modalImg").src = images[currentIndex];
-}
-
-/* Close when clicking outside */
-window.onclick = function(event) {
-    let modal = document.getElementById("modal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+</script>
 </script>
 
 </body>
