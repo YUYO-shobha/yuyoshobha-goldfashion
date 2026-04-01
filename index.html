@@ -237,13 +237,19 @@
 /* ===============================
    FOOTER (COPYRIGHT)
 ================================ */
-footer {
-    background: #000;
-    color: #ccc;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 14px;
-    letter-spacing: 0.5px;
+.fixed-footer {
+  position: fixed;         /* Fix it to the viewport */
+  bottom: 0;               /* Stick to the bottom */
+  left: 0;                 /* Align to left */
+  width: 100%;             /* Full width */
+  background-color: #000;  /* Black background */
+  color: #ccc;             /* Light gray text */
+  text-align: center;      /* Center text */
+  padding: 8px 0;          /* Vertical padding */
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;           /* Stay on top */
 }
 
 footer p {
@@ -540,8 +546,9 @@ footer span {
 </section>
 
 <footer>
-    <p>© 2026 YUYO SHOBHA  FASHION HUB</p>
-
+<div class="fixed-footer">
+  © 2026 YUYO SHOBHA  FASHION HUB. All rights reserved.
+</div>
 </footer>
         <a class="whatsapp" href="https://wa.me/919686032980">💬</a>
 
