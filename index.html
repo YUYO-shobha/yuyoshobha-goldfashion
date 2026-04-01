@@ -185,65 +185,86 @@
             .card img { height: 140px; }
             header h1 { font-size: 1.1rem; }
         }
-/* Info section container */
+/* MAIN CONTAINER (3 SECTIONS SIDE BY SIDE) */
 .info-section {
-  display: flex;
-  justify-content: space-between;  /* spread the three boxes */
-  max-width: 1000px;               /* fixed width for the section */
-  margin: 30px auto;
-  gap: 20px;
-  flex-wrap: wrap;                  /* allows stacking on small screens */
-  text-align: center;
-  font-family: Arial, sans-serif;
-  color: #333;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
+    flex-wrap: wrap;
 }
 
-/* Each box fixed width */
+/* EACH BOX */
 .info-box {
-  flex: 1 1 300px;                 /* each box takes min 300px width */
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 280px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Headings inside info-box */
+/* TITLES */
 .info-box h3 {
-  color: #004080;
-  margin-bottom: 12px;
+    color: #b76e79;
+    margin-bottom: 10px;
 }
 
-/* Opening Soon message standout */
-.opening-soon {
-  color: #d35400;
-  font-weight: 700;
-  margin-top: 10px;
-  letter-spacing: 0.5px;
+/* TEXT */
+.info-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Footer styling */
-footer {
-  background: #000;
-  color: #ccc;
-  width: 100%;
-  text-align: center;
-  padding: 12px 10px;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  font-family: Arial, sans-serif;
+/* CONTACT LINKS */
+.contact a {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+    text-decoration: none;
 }
 
-/* Responsive mobile stacking */
+.contact a:hover {
+    color: #b76e79;
+}
+
+/* MAP */
+.map iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* OPENING SOON BANNER */
+.opening-banner {
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff4d4d, #ff9966);
+    border-radius: 10px;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* GLOW ANIMATION */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #ff4d4d;
+    }
+    to {
+        box-shadow: 0 0 20px #ff9966;
+    }
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-  .info-section {
-    flex-direction: column;   /* stack the boxes vertically */
-    align-items: center;
-  }
-
-  .info-box {
-    width: 90%;               /* nearly full width on small screens */
-    max-width: 400px;
-  }
+    .info-section {
+        flex-direction: column;
+    }
 }
 
 /* ===============================
@@ -526,8 +547,11 @@ footer span {
            </a>
         </div>
         
-  <!-- Info Section: About Us, Contact, Map -->
-<section class="info-section">
+<div class="opening-banner">
+    🎉 Grand Opening Soon – Stay Tuned! 🎉
+</div>
+
+<div class="info-section">
 
   <!-- About Us -->
   <div class="info-box">
@@ -536,7 +560,7 @@ footer span {
       YUYO Shobha Fashion Hub is your destination for stylish 1 gram gold jewellery and beautiful fashion collections.
       We bring you the latest designs in necklaces, bangles, sarees, and for every occasion.
     </p>
-    <p class="opening-soon">✨ Opening Soon – Stay Connected ✨</p>
+      
   </div>
 
   <!-- Contact Us -->
