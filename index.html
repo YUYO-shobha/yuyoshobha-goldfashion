@@ -343,49 +343,6 @@ footer span {
     margin: 10px 0;
 }
 
-        /* Kurta 4 Styles inside index.html */
-#kurta4-product {
-    width: 350px;
-    margin: 40px auto;
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff8f0;
-}
-
-#kurta4-product .product-images {
-    position: relative;
-}
-
-#kurta4-product .main-img {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 5px;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-#kurta4-product .thumbs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-#kurta4-product .thumb {
-    width: 80px;
-    height: 100px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    transition: border 0.2s;
-}
-
-#kurta4-product .thumb:hover {
-    border: 2px solid #ff6600;
-}
 </style>
     
     </style>
@@ -474,21 +431,6 @@ footer span {
             </a>
         </div>
         
-<!-- Kurta 4 Product Section -->
-<div class="product-container" id="kurta 4-product">
-    <div class="product-images">
-        <img src="images/kurta 4-1.jpg" alt="Kurta 4 Image 1" class="main-img">
-        <div class="thumbs">
-            <img src="images/kurta 4-1.jpg" alt="Kurta 4 Thumb 1" class="thumb" onclick="changeImage(this)">
-            <img src="images/kurta 4-2.jpg" alt="Kurta 4 Thumb 2" class="thumb" onclick="changeImage(this)">
-            <img src="images/kurta 4-3.jpg" alt="Kurta 4 Thumb 3" class="thumb" onclick="changeImage(this)">
-        </div>
-    </div>
-    <h3>Stylish Kurta</h3>
-    <p>Price: ₹1800</p>
-    <p>Designer kurta with embroidery, perfect for festive occasions.</p>
-    <button onclick="window.location.href='mailto:yourmail@example.com?subject=Enquiry about Kurta 4'">Enquire</button>
-</div>
         <!-- jewellery 1 product section-->
         
     <div class="card jewellery">
@@ -675,11 +617,7 @@ function closeModal() {
     document.getElementById("quickView").style.display = "none";
 }
 
-    // Kurta 4 image switcher
-function changeImage(el) {
-    const main = document.querySelector('#kurta4-product .main-img');
-    main.src = el.src;
-}
+
 </script>
 </script>
 
