@@ -1,92 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <title>YUYO SHOBHA FASHION HUB</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root {
-    --bg: #fff8f0;
-    --text: #1a1a1a;
-    --gold: #d4af37;
-    --black: #000;
-    --white: #fff;
-    --green: #2b8a3e;
-}
-
-* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    background: #fff8f0;
 }
 
-/* STICKY TOPBAR */
-.topbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
+/* HEADER */
 header {
-    background: #000;
-    color: var(--gold);
+    background: black;
+    color: gold;
     text-align: center;
-    padding: 14px 12px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.25rem;
-    letter-spacing: .5px;
-}
-
-header p {
-    margin: 2px 0 0;
-    font-size: 0.85rem;
-    opacity: 0.9;
+    padding: 15px;
 }
 
 nav {
-    background: var(--gold);
-    padding: 10px;
+    background: gold;
     text-align: center;
+    padding: 10px;
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 10px;
     text-decoration: none;
-    color: #000;
+    color: black;
     font-weight: bold;
-}
-
-nav a:hover {
-    color: #fff;
-}
-
-/* HERO */
-.hero {
-    margin-top: 120px;
-    padding: 40px 16px;
-    text-align: center;
-    background: var(--bg);
-}
-
-.hero h1 {
-    font-size: 2.25rem;
-    margin-bottom: 0.75rem;
-    color: var(--text);
-}
-
-.hero p {
-    font-size: 1.05rem;
-    color: #555;
-    max-width: 60ch;
-    margin: 0 auto;
 }
 
 /* SEARCH */
@@ -100,399 +46,224 @@ nav a:hover {
     width: 250px;
 }
 
-/* FILTER BUTTONS */
+/* FILTER */
 .filters {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .filters button {
     padding: 10px;
     margin: 5px;
+    background: black;
+    color: gold;
     border: none;
-    background: #000;
-    color: var(--gold);
     cursor: pointer;
 }
 
 /* PRODUCTS */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
     gap: 15px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .card {
-    background: #fff;
+    background: white;
     border-radius: 10px;
-    overflow: hidden;
     text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 1px 3px rgba(0,0,0,.1);
 }
-
-.card:hover { transform: scale(1.03); }
 
 .card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    display: block;
     cursor: pointer;
 }
 
-.card p {
-    padding: 10px;
-    margin: 0;
-}
-
 .btn {
+    background: green;
+    color: white;
+    padding: 8px;
     display: inline-block;
-    background: var(--green);
-    color: white;
-    padding: 8px 12px;
+    margin: 10px;
     text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    margin: 8px 0 0;
-}
-
-/* INFO SECTION */
-.info-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 30px;
-}
-
-.info-box {
-    flex: 1;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.info-box h3 {
-    color: #b76e79;
-    margin-bottom: 10px;
-}
-
-.info-box p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333;
-}
-
-.contact a {
-    display: block;
-    margin-top: 5px;
-    color: #333;
-    text-decoration: none;
-}
-
-.contact a:hover {
-    color: #b76e79;
-}
-
-.map iframe {
-    width: 100%;
-    height: 220px;
-    border-radius: 10px;
-    border: none;
-}
-
-/* OPENING BANNER */
-.opening-banner {
-    margin: 20px;
-    padding: 18px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(45deg, #ff4d4d, #ff9966);
-    border-radius: 10px;
-    animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #ff4d4d; }
-    to { box-shadow: 0 0 25px #ff9966; }
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 14px;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,.2);
-}
-
-/* FOOTER */
-footer {
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 12px;
-}
-
-.fixed-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000;
-  color: #ccc;
-  text-align: center;
-  padding: 8px 0;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  font-family: Arial, sans-serif;
-  z-index: 1000;
-}
-
-footer p { margin: 5px 0; }
-footer span { color: var(--gold); font-weight: bold; }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .info-section { flex-direction: column; }
-    .hero h1 { font-size: 1.75rem; }
-    .card img { height: 140px; }
 }
 
 /* MODAL */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
 }
 
 .modal-content {
-  background: #fff;
-  margin: auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  border-radius: 10px;
+    background: white;
+    margin: 60px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .modal-content img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+    width: 100%;
+    cursor: zoom-in;
+    transition: 0.3s;
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
+.modal-content img.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
 }
 
 #thumbnailContainer img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border 0.2s;
+    width: 60px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-#thumbnailContainer img:hover { border: 2px solid var(--gold); }
-
-.price { font-weight: bold; margin: 10px 0; }
-
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
 </style>
 </head>
 
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-<header role="banner" aria-label="Site header">
-    <h1>✨ YUYO SHOBHA FASHION HUB ✨</h1>
-    <p>Shine in Style | ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
+<header>
+<h1>YUYO SHOBHA FASHION HUB</h1>
 </header>
 
-<nav aria-label="Main navigation">
-    <a href="#">Home</a>
-    <a href="#jewellery">Jewellery</a>
-    <a href="#sarees">Sarees</a>
-    <a href="#kurtas">Kurtas</a>
-    <a href="#contact">Contact</a>
+<nav>
+<a href="#">Home</a>
+<a href="#products">Collection</a>
 </nav>
-</div>
 
-<!-- HERO -->
-<main class="hero" role="region" aria-label="Hero section: Welcome to YUYO Shobha Fashion Hub">
-<h1>Welcome to YUYO Shobha Fashion Hub</h1>
-<p>
-Discover elegant 1 gram gold jewellery and trendy fashion collections, including sarees and kurtas — designed for style, quality, and affordability.
-</p>
-</main>
-
-<!-- SEARCH -->
 <div class="search">
-    <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
+<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchProducts()">
 </div>
 
-<!-- FILTER -->
 <div class="filters">
-    <button onclick="filterProducts('all')">All</button>
-    <button onclick="filterProducts('jewellery')">Jewellery</button>
-    <button onclick="filterProducts('saree')">Sarees</button>
-    <button onclick="filterProducts('kurta')">Kurtas</button>
+<button onclick="filterProducts('all')">All</button>
+<button onclick="filterProducts('kurta')">Kurta</button>
+<button onclick="filterProducts('saree')">Saree</button>
+<button onclick="filterProducts('jewellery')">Jewellery</button>
 </div>
 
-<!-- PRODUCTS -->
-<section>
-<h2 style="text-align:center;">Our Collection</h2>
-<div class="products" id="productList">
+<section id="products">
+<div class="products">
 
-<!-- Example Product Cards -->
-<div class="card kurta" data-name="Elegant Kurta" data-price="₹1000" data-images="kurta.png,kurta1.png" data-desc="Elegant kurta perfect for casual and festive wear.">
-    <img src="kurta.png" alt="Elegant Kurta" onclick="openModal(this)">
-    <p>Elegant Kurta</p>
-    <p class="price">₹1000</p>
-    <a href="https://wa.me/919686032980?text=I am interested in Elegant Kurta" class="btn" target="_blank">Enquire</a>
+<!-- PRODUCT 1 -->
+<div class="card kurta"
+data-name="Kurta"
+data-price="₹1000"
+data-images="kurta.png,kurta1.png,kurta2.png"
+data-desc="Beautiful kurta">
+<img src="kurta.png" onclick="openModal(this)">
+<p>Kurta</p>
+<p>₹1000</p>
 </div>
 
-<div class="card saree" data-name="Yellow Saree" data-price="₹300" data-images="saree1.png,saree2.png" data-desc="Beautiful yellow saree with golden border.">
-    <img src="saree1.png" alt="Yellow Saree" onclick="openModal(this)">
-    <p>Yellow Saree</p>
-    <p class="price">₹300</p>
-    <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Enquire</a>
+<!-- PRODUCT 2 -->
+<div class="card saree"
+data-name="Saree"
+data-price="₹300"
+data-images="saree1.png,saree2.png"
+data-desc="Nice saree">
+<img src="saree1.png" onclick="openModal(this)">
+<p>Saree</p>
+<p>₹300</p>
 </div>
 
-<div class="card jewellery" data-name="Red Chain" data-price="₹499" data-images="chain2.png" data-desc="Stylish 1 gram gold chain for daily wear.">
-    <img src="chain2.png" alt="Red Chain" onclick="openModal(this)">
-    <p>Red Chain</p>
-    <p class="price">₹499</p>
-    <a href="https://wa.me/919686032980?text=I am interested in Red Chain" class="btn" target="_blank">Enquire</a>
+<!-- PRODUCT 3 -->
+<div class="card jewellery"
+data-name="Chain"
+data-price="₹499"
+data-images="chain2.png"
+data-desc="Gold chain">
+<img src="chain2.png" onclick="openModal(this)">
+<p>Chain</p>
+<p>₹499</p>
 </div>
 
-<!-- Add more product cards below in the same structure -->
 </div>
 </section>
 
-<!-- OPENING BANNER -->
-<div class="opening-banner">
-    🎉 Grand Opening Soon – Stay Tuned! 🎉
-</div>
-
-<!-- INFO SECTION -->
-<div class="info-section" id="contact">
-<div class="info-box">
-    <h3>About Us</h3>
-    <p>
-        YUYO Shobha Fashion Hub is your destination for stylish 
-        <strong>1 gram gold jewellery</strong> and beautiful fashion collections.
-        We bring you the latest designs in <strong>necklaces, bangles, sarees</strong>,
-        perfect for every occasion.  
-        Our goal is to provide elegant, trendy, and affordable fashion for everyone.
-    </p>
-</div>
-
-<div class="info-box contact">
-    <h3>Contact Us</h3>
-    <p>📍 <strong>YUYO SHOBHA FASHION HUB</strong></p>
-    <p>RMS Colony, Bhattarahalli, K R Puram, Bengaluru - 560049</p>
-    <p>📞 <a href="tel:9686032980">9686032980</a></p>
-</div>
-
-<div class="info-box map">
-    <h3>Our Location</h3>
-    <iframe src="https://maps.google.com/maps?q=RMS%20Colony%20Bhattarahalli%20KR%20Puram%20Bangalore%20560049&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="YUYO SHOBHA FASHION HUB Location"></iframe>
-</div>
-</div>
-
-<footer>
-<div class="fixed-footer">
-  © 2026 YUYO SHOBHA FASHION HUB. All rights reserved.
-</div>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/919686032980">💬</a>
-
 <!-- MODAL -->
 <div id="quickView" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
-    <img id="mainImage" src="" alt="Product Image">
-    <h3 id="modalName"></h3>
-    <p class="price" id="modalPrice"></p>
-    <p id="modalDesc"></p>
-    <div id="thumbnailContainer" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;"></div>
-    <a href="#" id="modalWhatsapp" class="btn" target="_blank">Order on WhatsApp</a>
-  </div>
+<span class="close" onclick="closeModal()">&times;</span>
+
+<div class="modal-content">
+<img id="mainImage">
+<h3 id="modalName"></h3>
+<p id="modalPrice"></p>
+<p id="modalDesc"></p>
+
+<div id="thumbnailContainer"></div>
+</div>
 </div>
 
 <script>
-// OPEN MODAL WITH MULTIPLE IMAGES
-function openModal(imgElement) {
-    const card = imgElement.closest('.card');
-    const name = card.dataset.name;
-    const price = card.dataset.price;
-    const desc = card.dataset.desc;
-    const images = card.dataset.images.split(',');
+function openModal(img){
+const card = img.closest('.card');
 
-    document.getElementById('quickView').style.display = 'block';
-    document.getElementById('mainImage').src = images[0];
-    document.getElementById('modalName').textContent = name;
-    document.getElementById('modalPrice').textContent = price;
-    document.getElementById('modalDesc').textContent = desc;
+const images = card.dataset.images.split(',');
+const main = document.getElementById('mainImage');
 
-    document.getElementById('modalWhatsapp').href = card.querySelector('.btn').href;
+document.getElementById('quickView').style.display='block';
 
-    const thumbContainer = document.getElementById('thumbnailContainer');
-    thumbContainer.innerHTML = '';
-    images.forEach(src => {
-        const thumb = document.createElement('img');
-        thumb.src = src;
-        thumb.onclick = () => document.getElementById('mainImage').src = src;
-        thumbContainer.appendChild(thumb);
-    });
+main.src = images[0];
+main.classList.remove('zoomed');
+
+document.getElementById('modalName').innerText = card.dataset.name;
+document.getElementById('modalPrice').innerText = card.dataset.price;
+document.getElementById('modalDesc').innerText = card.dataset.desc;
+
+const box = document.getElementById('thumbnailContainer');
+box.innerHTML='';
+
+images.forEach(src=>{
+let i=document.createElement('img');
+i.src=src;
+i.onclick=()=>{ main.src=src; main.classList.remove('zoomed'); }
+box.appendChild(i);
+});
 }
 
-function closeModal() {
-    document.getElementById('quickView').style.display = 'none';
+function closeModal(){
+document.getElementById('quickView').style.display='none';
 }
 
-// FILTER PRODUCTS
-function filterProducts(category) {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        if(category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'block';
-        } else { card.style.display = 'none'; }
-    });
+document.getElementById('mainImage').onclick=function(){
+this.classList.toggle('zoomed');
 }
 
-// SEARCH PRODUCTS
-function searchProducts() {
-    const query = document.getElementById('searchBox').value.toLowerCase();
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const name = card.dataset.name.toLowerCase();
-        card.style.display = name.includes(query) ? 'block' : 'none';
-    });
+function filterProducts(cat){
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display = (cat=='all'||c.classList.contains(cat))?'block':'none';
+});
+}
+
+function searchProducts(){
+let q=document.getElementById('searchBox').value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display = c.dataset.name.toLowerCase().includes(q)?'block':'none';
+});
+}
+
+window.onclick=function(e){
+if(e.target==document.getElementById('quickView')){
+closeModal();
+}
 }
 </script>
 
