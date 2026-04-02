@@ -1,396 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>YUYO SHOBHA FASHION HUB</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<title>YUYO SHOBHA FASHION HUB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --bg: #fff8f0;
-            --text: #1a1a1a;
-            --gold: #d4af37;
-            --black: #000;
-            --white: #fff;
-            --green: #2b8a3e;
-        }
+<style>
+:root {
+    --bg: #fff8f0;
+    --text: #1a1a1a;
+    --gold: #d4af37;
+    --black: #000;
+    --white: #fff;
+    --green: #2b8a3e;
+}
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
 
-        * { box-sizing: border-box; }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-        }
+/* TOPBAR & NAV */
+.topbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+header { background: #000; color: var(--gold); text-align: center; padding: 14px 12px; }
+header h1 { margin: 0; font-size: 1.25rem; letter-spacing: .5px; }
+header p { margin: 2px 0 0; font-size: 0.85rem; opacity: 0.9; }
+nav { background: var(--gold); padding: 10px; text-align: center; }
+nav a { margin: 0 10px; text-decoration: none; color: #000; font-weight: bold; }
+nav a:hover { color: #fff; }
 
-        /* TOPBAR & HEADER */
-        .topbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+/* HERO */
+.hero { margin-top: 120px; padding: 40px 16px; text-align: center; background: var(--bg); }
+.hero h1 { font-size: 2.25rem; margin-bottom: 0.75rem; color: var(--text); }
+.hero p { font-size: 1.05rem; color: #555; max-width: 60ch; margin: 0 auto; }
 
-        header {
-            background: #000;
-            color: var(--gold);
-            text-align: center;
-            padding: 14px 12px;
-        }
+/* SEARCH */
+.search { text-align: center; margin: 20px; }
+.search input { padding: 10px; width: 250px; }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.25rem;
-            letter-spacing: .5px;
-        }
+/* FILTER BUTTONS */
+.filters { text-align: center; margin-bottom: 20px; }
+.filters button { padding: 10px; margin: 5px; border: none; background: #000; color: var(--gold); cursor: pointer; }
+.filters button:hover { opacity: 0.8; }
 
-        header p {
-            margin: 2px 0 0;
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
+/* PRODUCTS */
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; padding: 10px; }
+.card { background: #fff; border-radius: 10px; overflow: hidden; text-align: center; transition: 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,.1); cursor: pointer; }
+.card:hover { transform: scale(1.03); }
+.card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.card p { padding: 10px; margin: 0; }
+.btn { display: inline-block; background: var(--green); color: white; padding: 8px 12px; text-decoration: none; text-align: center; border-radius: 4px; margin: 8px 0 0; }
 
-        nav {
-            background: var(--gold);
-            padding: 10px;
-            text-align: center;
-        }
+/* MODAL */
+.modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y:auto; }
+.modal-content { background: #fff; margin: auto; padding: 20px; width: 90%; max-width: 500px; text-align: center; border-radius: 10px; }
+.modal-content img#mainModalImage { width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px; }
+.modal-thumbnails { display: flex; gap: 10px; overflow-x: auto; justify-content: center; margin-bottom: 15px; }
+.modal-thumbnails img { height: 80px; cursor: pointer; border: 2px solid #ccc; border-radius: 5px; }
+.modal-thumbnails img.active { border-color: var(--green); }
+.close { position: absolute; top: 20px; right: 25px; color: white; font-size: 30px; cursor: pointer; }
 
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
+/* INFO SECTION */
+.info-section { display: flex; justify-content: space-between; gap: 20px; padding: 30px; }
+.info-box { flex: 1; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.info-box h3 { color: #b76e79; margin-bottom: 10px; }
+.info-box p { font-size: 14px; line-height: 1.6; color: #333; }
+.contact a { display: block; margin-top: 5px; color: #333; text-decoration: none; }
+.contact a:hover { color: #b76e79; }
+.map iframe { width: 100%; height: 220px; border-radius: 10px; border: none; }
 
-        nav a:hover {
-            color: #fff;
-        }
+/* OPENING BANNER */
+.opening-banner { margin: 20px; padding: 18px; text-align: center; font-size: 24px; font-weight: bold; color: white; background: linear-gradient(45deg, #ff4d4d, #ff9966); border-radius: 10px; animation: glow 1.5s infinite alternate; }
+@keyframes glow { from { box-shadow: 0 0 10px #ff4d4d; } to { box-shadow: 0 0 25px #ff9966; } }
 
-        /* HERO */
-        .hero {
-            margin-top: 120px;
-            padding: 40px 16px;
-            text-align: center;
-            background: var(--bg);
-        }
+/* WHATSAPP FLOAT */
+.whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 14px; border-radius: 50%; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,.2); }
 
-        .hero h1 {
-            font-size: 2.25rem;
-            margin-bottom: 0.75rem;
-        }
+/* FOOTER */
+.fixed-footer { background-color: #000; color: #ccc; text-align: center; padding: 8px 0; font-size: 14px; letter-spacing: 0.5px; font-family: Arial, sans-serif; }
+footer p { margin: 5px 0; }
+footer span { color: var(--gold); font-weight: bold; }
 
-        .hero p {
-            font-size: 1.05rem;
-            color: #555;
-            max-width: 60ch;
-            margin: 0 auto;
-        }
-
-        /* SEARCH */
-        .search {
-            text-align: center;
-            margin: 20px;
-        }
-        .search input {
-            padding: 10px;
-            width: 250px;
-        }
-
-        /* FILTER BUTTONS */
-        .filters {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .filters button {
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            background: #000;
-            color: var(--gold);
-            cursor: pointer;
-        }
-
-        /* PRODUCTS */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-            padding: 10px;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 1px 3px rgba(0,0,0,.1);
-        }
-
-        .card:hover { transform: scale(1.03); }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-        }
-
-        .card p, .card h4 {
-            padding: 10px;
-            margin: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 8px 12px;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 4px;
-            margin: 8px 0 0;
-        }
-
-        /* INFO SECTION */
-        .info-section {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 30px;
-        }
-
-        .info-box {
-            flex: 1;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .info-box h3 { color: #b76e79; margin-bottom: 10px; }
-        .info-box p { font-size: 14px; line-height: 1.6; color: #333; }
-
-        .contact a { display: block; margin-top: 5px; color: #333; text-decoration: none; }
-        .contact a:hover { color: #b76e79; }
-
-        .map iframe { width: 100%; height: 220px; border-radius: 10px; border: none; }
-
-        /* OPENING BANNER */
-        .opening-banner {
-            margin: 20px;
-            padding: 18px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(45deg, #ff4d4d, #ff9966);
-            border-radius: 10px;
-            animation: glow 1.5s infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 10px #ff4d4d; }
-            to { box-shadow: 0 0 25px #ff9966; }
-        }
-
-        /* FOOTER */
-        .fixed-footer {
-            background-color: #000;
-            color: #ccc;
-            text-align: center;
-            padding: 8px 0;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-        }
-
-        footer p { margin: 5px 0; }
-        footer span { color: var(--gold); font-weight: bold; }
-
-        /* WHATSAPP FLOAT */
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 14px;
-            border-radius: 50%;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,.2);
-        }
-
-        /* QUICK VIEW MODAL */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-        }
-
-        .modal-content {
-            background: #fff;
-            margin: auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 350px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .modal-content img { width: 100%; border-radius: 10px; }
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .price { font-weight: bold; margin: 10px 0; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .info-section { flex-direction: column; }
-            .hero h1 { font-size: 1.75rem; }
-            .card img { height: 140px; }
-        }
-    </style>
+/* RESPONSIVE */
+@media (max-width: 768px) { .info-section { flex-direction: column; } .hero h1 { font-size: 1.75rem; } .card img { height: 140px; } }
+</style>
 </head>
+
 <body>
 
-<!-- TOPBAR & NAV -->
+<!-- TOPBAR -->
 <div class="topbar">
-    <header role="banner">
-        <h1>✨ YUYO SHOBHA FASHION HUB ✨</h1>
-        <p>Shine in Style | ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
-    </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#jewellery">Jewellery</a>
-        <a href="#sarees">Sarees</a>
-        <a href="#kurtas">Kurtas</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<header role="banner" aria-label="Site header">
+    <h1>✨ YUYO SHOBHA FASHION HUB ✨</h1>
+    <p>Shine in Style | ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
+</header>
+
+<nav aria-label="Main navigation">
+    <a href="#">Home</a>
+    <a href="#jewellery">Jewellery</a>
+    <a href="#sarees">Sarees</a>
+    <a href="#kurtas">Kurtas</a>
+    <a href="#contact">Contact</a>
+</nav>
 </div>
 
 <!-- HERO -->
 <main class="hero">
-    <h1>Welcome to YUYO Shobha Fashion Hub</h1>
-    <p>Discover elegant 1 gram gold jewellery and trendy fashion collections, including sarees and kurtas — designed for style, quality, and affordability.</p>
+<h1>Welcome to YUYO Shobha Fashion Hub</h1>
+<p>Discover elegant 1 gram gold jewellery and trendy fashion collections, including sarees and kurtas — designed for style, quality, and affordability.</p>
 </main>
 
 <!-- SEARCH -->
 <div class="search">
-    <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
+<input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
 </div>
 
 <!-- FILTER -->
 <div class="filters">
-    <button onclick="filterProducts('all')">All</button>
-    <button onclick="filterProducts('jewellery')">Jewellery</button>
-    <button onclick="filterProducts('saree')">Sarees</button>
-    <button onclick="filterProducts('kurta')">Kurtas</button>
+<button onclick="filterProducts('all')">All</button>
+<button onclick="filterProducts('jewellery')">Jewellery</button>
+<button onclick="filterProducts('saree')">Sarees</button>
+<button onclick="filterProducts('kurta')">Kurtas</button>
 </div>
 
 <!-- PRODUCTS -->
 <section>
-    <h2 style="text-align:center;">Our Collection</h2>
-    <div class="products" id="productList">
-        <!-- Example Product -->
-        <div class="card kurta">
-            <img src="kurta.png" onclick="openModal('kurta.png')" alt="Kurta">
-            <p>Kurta</p>
-            <p class="price">₹1000</p>
-            <a href="https://wa.me/919686032980?text=I am interested in Kurta" class="btn" target="_blank">Enquire</a>
-        </div>
-        <!-- Add your other products here, following the same structure -->
-    </div>
+<h2 style="text-align:center;">Our Collection</h2>
+<div class="products" id="productList">
+
+<!-- Product Example -->
+<div class="card kurta" data-name="Elegant Kurta" data-price="₹1000" data-images="kurta1.png,kurta2.png" data-desc="Elegant kurta perfect for casual and festive wear.">
+<img src="kurta1.png" alt="Elegant Kurta" onclick="openModal(this)">
+<p>Elegant Kurta</p>
+<p class="price">₹1000</p>
+<a href="https://wa.me/919686032980?text=I am interested in Elegant Kurta" class="btn" target="_blank">Enquire</a>
+</div>
+
+<div class="card saree" data-name="Pink Saree" data-price="₹1200" data-images="saree1.png,saree2.png" data-desc="Beautiful pink saree with golden border.">
+<img src="saree1.png" alt="Pink Saree" onclick="openModal(this)">
+<p>Pink Saree</p>
+<p class="price">₹1200</p>
+<a href="https://wa.me/919686032980?text=I am interested in Pink Saree" class="btn" target="_blank">Enquire</a>
+</div>
+
+<!-- Add more products below using same structure -->
+
+</div>
 </section>
 
 <!-- OPENING BANNER -->
 <div class="opening-banner">
-    🎉 Grand Opening Soon – Stay Tuned! 🎉
+🎉 Grand Opening Soon – Stay Tuned! 🎉
 </div>
 
 <!-- INFO SECTION -->
-<div class="info-section" id="contact">
-    <!-- ABOUT US -->
-    <div class="info-box">
-        <h3>About Us</h3>
-        <p>YUYO Shobha Fashion Hub is your destination for stylish <strong>1 gram gold jewellery</strong> and beautiful fashion collections. We bring you the latest designs in <strong>necklaces, bangles, sarees</strong>, perfect for every occasion. Our goal is to provide elegant, trendy, and affordable fashion for everyone.</p>
-    </div>
+<div class="info-section">
+<div class="info-box">
+<h3>About Us</h3>
+<p>YUYO Shobha Fashion Hub is your destination for stylish <strong>1 gram gold jewellery</strong> and beautiful fashion collections. Perfect for every occasion.</p>
+</div>
 
-    <!-- CONTACT -->
-    <div class="info-box contact">
-        <h3>Contact Us</h3>
-        <p>📍 <strong>YUYO SHOBHA FASHION HUB</strong></p>
-        <p>RMS Colony, Bhattarahalli, K R Puram, Bengaluru - 560049</p>
-        <p>📞 <a href="tel:9686032980">9686032980</a></p>
-    </div>
+<div class="info-box contact">
+<h3>Contact Us</h3>
+<p>📍 RMS Colony, Bhattarahalli, K R Puram, Bengaluru - 560049</p>
+<p>📞 <a href="tel:9686032980">9686032980</a></p>
+</div>
 
-    <!-- MAP -->
-    <div class="info-box map">
-        <h3>Our Location</h3>
-        <iframe src="https://maps.google.com/maps?q=RMS%20Colony%20Bhattarahalli%20KR%20Puram%20Bangalore%20560049&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="YUYO SHOBHA FASHION HUB Location"></iframe>
-    </div>
+<div class="info-box map">
+<h3>Our Location</h3>
+<iframe src="https://maps.google.com/maps?q=RMS%20Colony%20Bhattarahalli%20KR%20Puram%20Bangalore%20560049&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="YUYO SHOBHA FASHION HUB Location"></iframe>
+</div>
+</div>
+
+<!-- MODAL -->
+<div id="quickView" class="modal">
+<span class="close" onclick="closeModal()">&times;</span>
+<div class="modal-content">
+<img id="mainModalImage" src="" alt="Main Product Image">
+<div class="modal-thumbnails" id="modal-thumbnails"></div>
+<h3 id="modal-name"></h3>
+<p class="price" id="modal-price"></p>
+<p id="modal-desc"></p>
+<a id="modal-btn" href="#" class="btn" target="_blank">Order on WhatsApp</a>
+</div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-    <div class="fixed-footer">
-        © 2026 YUYO SHOBHA FASHION HUB. All rights reserved.
-    </div>
+<div class="fixed-footer">© 2026 YUYO SHOBHA FASHION HUB. All rights reserved.</div>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
 <a class="whatsapp" href="https://wa.me/919686032980">💬</a>
 
-<!-- QUICK VIEW MODAL -->
-<div id="quickView" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <img id="mainImage" src="kurta.png" alt="Quick View">
-        <h3>Kurta</h3>
-        <p class="price">₹1000</p>
-        <a href="https://wa.me/919686032980?text=I want Kurta" class="btn" target="_blank">Order on WhatsApp</a>
-    </div>
-</div>
-
+<!-- JS -->
 <script>
-function openModal(imageSrc) {
-    document.getElementById("quickView").style.display = "block";
-    document.getElementById("mainImage").src = imageSrc;
-}
-
-function closeModal() {
-    document.getElementById("quickView").style.display = "none";
-}
-
-function searchProducts() {
-    let input = document.getElementById('searchBox').value.toLowerCase();
+// FILTER PRODUCTS
+function filterProducts(category){
     let cards = document.querySelectorAll('.products .card');
     cards.forEach(card => {
-        let text = card.textContent.toLowerCase();
-        card.style.display = text.includes(input) ? 'block' : 'none';
+        if(category==='all' || card.classList.contains(category)){
+            card.style.display='block';
+        } else card.style.display='none';
     });
 }
 
-function filterProducts(category) {
+// SEARCH PRODUCTS
+function searchProducts(){
+    let query = document.getElementById('searchBox').value.toLowerCase();
     let cards = document.querySelectorAll('.products .card');
     cards.forEach(card => {
-        card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
+        let name = card.dataset.name.toLowerCase();
+        card.style.display = name.includes(query) ? 'block' : 'none';
     });
 }
+
+// MODAL
+function openModal(imgElement){
+    const card = imgElement.closest('.card');
+    const images = card.dataset.images.split(',');
+    const name = card.dataset.name;
+    const price = card.dataset.price;
+    const desc = card.dataset.desc;
+
+    document.getElementById('mainModalImage').src = images[0];
+
+    // thumbnails
+    const thumbs = document.getElementById('modal-thumbnails');
+    thumbs.innerHTML='';
+    images.forEach((src, index) => {
+        let thumb = document.createElement('img');
+        thumb.src = src;
+        if(index===0) thumb.classList.add('active');
+        thumb.onclick = function(){
+            document.getElementById('mainModalImage').src = src;
+            thumbs.querySelectorAll('img').forEach(i=>i.classList.remove('active'));
+            this.classList.add('active');
+        };
+        thumbs.appendChild(thumb);
+    });
+
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-price').textContent = price;
+    document.getElementById('modal-desc').textContent = desc;
+    document.getElementById('modal-btn').href = `https://wa.me/919686032980?text=I am interested in ${encodeURIComponent(name)}`;
+
+    document.getElementById('quickView').style.display='block';
+}
+
+function closeModal(){ document.getElementById('quickView').style.display='none'; }
 </script>
-
 </body>
 </html>
