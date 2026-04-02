@@ -103,10 +103,4 @@ body {
     }
 }
 
-/* Fix Kurta4 image size to match other product cards */
-.products .card img[src*="kurta4"] {
-    width: 100%;       /* same as other product images */
-    height: 180px;     /* match the standard height of all cards */
-    object-fit: cover; /* crop/fit properly without stretching */
-    display: block;
-}
+
