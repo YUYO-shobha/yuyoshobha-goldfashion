@@ -30,36 +30,49 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    background: linear-gradient(to right, #ff9ecb, #ffc1da); /* 🌸 pink theme */
 }
+
+/* HEADER */
 header {
-    background: #000;
-    color: var(--gold);
+    background: transparent; /* remove black */
     text-align: center;
     padding: 14px 12px;
 }
-header h1 {
-    margin: 0;
-    font-size: 1.25rem;
-    letter-spacing: .5px;
+
+/* LOGO IMAGE */
+header img {
+    width: 170px;
 }
+
+/* TAGLINE */
 header p {
-    margin: 2px 0 0;
-    font-size: 0.85rem;
-    opacity: 0.9;
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #6a1b4d;
+    font-weight: 500;
 }
+
+/* NAVBAR */
 nav {
-    background: var(--gold);
+    background: white;
     padding: 10px;
     text-align: center;
 }
+
+/* NAV LINKS */
 nav a {
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
-    color: #000;
+    color: #d81b60;
     font-weight: bold;
-    cursor: pointer;
+    transition: 0.3s;
 }
-nav a:hover { color: #fff; }
+
+/* HOVER */
+nav a:hover {
+    color: #880e4f;
+}
 
 /* HERO */
 .hero {
@@ -272,7 +285,8 @@ nav a:hover { color: #fff; }
 <!-- TOPBAR -->
 <div class="topbar">
     <header>
-        <h1>✨ YUYO SHOBHA FASHION HUB ✨</h1>
+        <img src="images/logo.png" width="150">
+        <h1>YUYO SHOBHA FASHION HUB</h1>
         <p>Shine in Style | ಶೈನ್ ಇನ್ ಸ್ಟೈಲ್</p>
     </header>
     <nav>
@@ -384,6 +398,7 @@ nav a:hover { color: #fff; }
 </div>
 
 <script>
+
 // FILTER PRODUCTS
 function filterProducts(category) {
     const products = document.querySelectorAll('.products .card');
@@ -411,13 +426,48 @@ function openModal(imgSrc, title, price) {
     document.getElementById('modalBtn').href = `https://wa.me/919686032980?text=I want ${title}`;
     modal.style.display = 'block';
 }
-function closeModal() { document.getElementById('quickView').style.display = 'none'; }
+
+function closeModal() {
+    document.getElementById('quickView').style.display = 'none';
+}
 
 // MODAL IMAGE ZOOM
 const modalImage = document.getElementById('mainImage');
-modalImage.addEventListener('click', function() {
-    this.classList.toggle('zoomed');
+if (modalImage) {
+    modalImage.addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+    });
+}
+
+/* ✅ NEW: HEADER SHADOW ON SCROLL */
+window.addEventListener("scroll", function() {
+    const topbar = document.querySelector(".topbar");
+
+    if (window.scrollY > 20) {
+        topbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
+    } else {
+        topbar.style.boxShadow = "none";
+    }
 });
+
+/* ✅ NEW: SMOOTH SCROLL */
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute("href");
+
+        if (targetId.startsWith("#")) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+    });
+});
+
 </script>
 
 </body>
