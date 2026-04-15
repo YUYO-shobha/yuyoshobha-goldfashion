@@ -16,7 +16,7 @@
     --green: #2b8a3e;
 }
 
-/* GENERAL */
+/* ===== GENERAL ===== */
 * {
     box-sizing: border-box;
 }
@@ -24,11 +24,11 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    background: #FFF0F5;   /* light pink background */
+    color: #333;
 }
 
-/* Topbar */
+/* ===== TOPBAR / HEADER ===== */
 .topbar {
     background: #FFF0F5;
     padding: 5px 0;
@@ -39,12 +39,12 @@ body {
 .header {
     margin: 0;
     padding: 0;
-    line-height: 0;
+    line-height: 0; /* removes extra space */
 }
 
 /* Logo */
 .logo {
-    height: 80px;
+    height: 75px;   /* perfect size */
     width: auto;
     display: block;
     margin: 0 auto;
@@ -55,6 +55,7 @@ body {
     margin-top: 5px;
 }
 
+/* Menu Links */
 .menu a {
     text-decoration: none;
     color: #333;
@@ -62,10 +63,10 @@ body {
     font-size: 15px;
     font-weight: 500;
 }
-    
-/* Hover */
+
+/* Hover Effect */
 .menu a:hover {
-    color: #d4a373;
+    color: #d4a373; /* gold tone */
 }
 
 /* NAVBAR */
@@ -254,8 +255,8 @@ nav a:hover {
     <nav class="menu">
         <a onclick="filterProducts('all')">Home</a>
         <a onclick="filterProducts('jewellery')">Jewellery</a>
-        <a onclick="filterProducts('saree')">Sarees</a>
-        <a onclick="filterProducts('kurta')">Kurtas</a>
+        <a onclick="filterProducts('sarees')">Sarees</a>
+        <a onclick="filterProducts('kurtas')">Kurtas</a>
         <a href="#contact">Contact</a>
     </nav>
 
