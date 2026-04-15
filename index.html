@@ -84,15 +84,13 @@ nav a:hover {
 .banner {
     margin-top: 160px;
     width: 100%;
-    height: 400px;
-    overflow: hidden;
+    height: auto;        /* 🔥 FIX */
 }
 
 .banner-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;        /* 🔥 FIX: allow full image */
+    display: block;
 }
 
 /* TEXT OVERLAY */
