@@ -285,210 +285,88 @@ nav a:hover {
 <!-- TOPBAR -->
 <div class="topbar">
 
-    <!-- Header -->
     <header class="header">
-        <img src="yuyo-shobha-logo.png" class="logo" alt="Yuyo Shobha Logo">
+        <img src="yuyo-shobha-logo.png" class="logo">
     </header>
 
-    <!-- Navigation -->
-<nav class="menu">
-    <a href="#" onclick="filterProducts('all')">Home</a>
-    <a href="#" onclick="filterProducts('jewellery')">Jewellery</a>
-    <a href="#" onclick="filterProducts('sarees')">Sarees</a>
-    <a href="#" onclick="filterProducts('kurtas')">Kurtas</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <nav class="menu">
+        <a href="#" onclick="filterProducts('all'); return false;">Home</a>
+        <a href="#" onclick="filterProducts('jewellery'); return false;">Jewellery</a>
+        <a href="#" onclick="filterProducts('sarees'); return false;">Sarees</a>
+        <a href="#" onclick="filterProducts('kurtas'); return false;">Kurtas</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
 </div>
 
-   <section class="category-section">
-
+<!-- CATEGORY -->
+<section class="category-section">
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=200">
         <p>Bridal Sets</p>
     </div>
-
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200">
         <p>Bangles</p>
     </div>
-
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=200">
         <p>Rings</p>
     </div>
-
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=200">
         <p>Sarees</p>
     </div>
-
 </section>
 
-<!-- ✅ MAIN BANNER -->
+<!-- BANNER -->
 <section class="banner">
     <img src="banner-final.png" class="banner-img">
 </section>
-    
+
 <!-- SEARCH -->
 <div class="search">
     <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
 </div>
 
-    <!-- PRODUCTS -->
-    <section>
-        <h2 style="text-align:center;">Our Collection</h2>
-        <div class="products" id="productList">
+<!-- PRODUCTS -->
+<section>
+    <h2 style="text-align:center;">Our Collection</h2>
+    <div class="products">
 
-            <!-- Kurta 1 -->
-                <div class="card kurtas">
-                <img src="kurta.png" alt="Kurta" onclick="openModal('kurta.png','Kurta',1000)">
-                <p>Kurta</p>
-                <p>Price: ₹1000</p>
-                <a href="https://wa.me/919686032980?text=I am interested in Kurta" class="btn"
-                    target="_blank">Enquire</a>
-            </div>
-
-            <!-- Kurta 2 -->
-            <div class="card kurtas">
-                <img src="kurta2.png" alt="Kurta" onclick="openModal('kurta2.png','Kurta',2000)">
-                <p>Kurta2</p>
-                <p>Price: ₹2000</p>
-                <a href="https://wa.me/919686032980?text=I am interested in Kurta4" class="btn"
-                    target="_blank">Enquire</a>
-            </div>
-            <!-- Kurta 3 -->
-            <div class="card kurtas">
-                <img src="kurta3.png" alt="Kurta" onclick="openModal('kurta3.png','Kurta',1500)">
-                <p>Kurta3</p>
-                <p>Price: ₹1500</p>
-                <a href="https://wa.me/919686032980?text=I am interested in Kurta3" class="btn"
-                    target="_blank">Enquire</a>
-            </div>
-
-            <!-- Jewellery 1 -->
-            <div class="card jewellery">
-                <img src="chain2.png" alt="Red Chain" onclick="openModal('chain2.png','Red Chain',499)">
-                <h4>Red Chain</h4>
-                <p class="price">₹499</p>
-                <a href="https://wa.me/919686032980?text=I want Red Chain" class="btn" target="_blank">Order on
-                    WhatsApp</a>
-            </div>
-
-            <!-- Saree 1 -->
-            <div class="card sarees">
-                <img src="saree1.png" alt="Saree" onclick="openModal('saree1.png','Yellow Saree',300)">
-                <p>Saree</p>
-                <p>Price: ₹300</p>
-                <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn"
-                    target="_blank">Enquire</a>
-            </div>
-
-            <!-- Add more products similarly -->
-
+        <div class="card kurtas">
+            <img src="kurta.png" onclick="openModal('kurta.png','Kurta',1000)">
+            <p>Kurta</p>
         </div>
-    </section>
 
-    <!-- INFO SECTION -->
-    <div class="info-section" id="contact">
-        <div class="info-box">
-            <h3>About Us</h3>
-            <p>YUYO Shobha Fashion Hub is your destination for stylish <strong>1 gram gold jewellery</strong> and
-                beautiful fashion collections. Perfect for every occasion.</p>
+        <div class="card kurtas">
+            <img src="kurta2.png" onclick="openModal('kurta2.png','Kurta',2000)">
+            <p>Kurta2</p>
         </div>
-        <div class="info-box contact">
-            <h3>Contact Us</h3>
-            <p>📍 RMS Colony, Bhattarahalli, K R Puram, Bengaluru - 560049</p>
-            <p>📞 <a href="tel:9686032980">9686032980</a></p>
+
+        <div class="card jewellery">
+            <img src="chain2.png" onclick="openModal('chain2.png','Chain',499)">
+            <p>Chain</p>
         </div>
-        <div class="info-box map">
-            <h3>Our Location</h3>
-            <iframe
-                src="https://maps.google.com/maps?q=RMS%20Colony%20Bhattarahalli%20KR%20Puram%20Bangalore%20560049&output=embed"
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                title="YUYO SHOBHA FASHION HUB Location"></iframe>
+
+        <div class="card sarees">
+            <img src="saree1.png" onclick="openModal('saree1.png','Saree',300)">
+            <p>Saree</p>
         </div>
+
     </div>
+</section>
 
-    <footer>
-        <div class="fixed-footer">© 2026 YUYO SHOBHA FASHION HUB. All rights reserved.</div>
-    </footer>
+<!-- CONTACT -->
+<div id="contact">
+    <h3>Contact</h3>
+    <p>📞 9686032980</p>
+</div>
 
-    <a class="whatsapp" href="https://wa.me/919686032980">💬</a>
+<!-- SCRIPT -->
+<script>
 
-    <!-- MODAL -->
-    <div id="quickView" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <img id="mainImage" src="">
-            <h3 id="modalTitle"></h3>
-            <p class="price" id="modalPrice"></p>
-            <a id="modalBtn" href="#" class="btn" target="_blank">Order on WhatsApp</a>
-        </div>
-    </div>
-
-    <script>
-
-        // FILTER PRODUCTS
-        function filterProducts(category) {
-            const products = document.querySelectorAll('.products .card');
-            products.forEach(card => {
-                card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
-            });
-        }
-
-        // SEARCH PRODUCTS
-        function searchProducts() {
-            const input = document.getElementById('searchBox').value.toLowerCase();
-            const products = document.querySelectorAll('.products .card');
-            products.forEach(card => {
-                const name = card.querySelector('p,h4').innerText.toLowerCase();
-                card.style.display = name.includes(input) ? 'block' : 'none';
-            });
-        }
-
-        // MODAL OPEN/CLOSE
-        function openModal(imgSrc, title, price) {
-                const modal = document.getElementById('quickView');
-
-                document.getElementById('mainImage').src = imgSrc;
-                document.getElementById('modalTitle').innerText = title;
-                document.getElementById('modalPrice').innerText = "₹" + price;
-
-                // ✅ Correct WhatsApp link with dynamic product name
-                document.getElementById('modalBtn').href =
-                    `https://wa.me/919686032980?text=I want ${encodeURIComponent(title)}`;
-
-                modal.style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('quickView').style.display = 'none';
-        }
-
-        // MODAL IMAGE ZOOM
-        const modalImage = document.getElementById('mainImage');
-        if (modalImage) {
-            modalImage.addEventListener('click', function () {
-                this.classList.toggle('zoomed');
-            });
-        }
-
-        /* ✅ NEW: HEADER SHADOW ON SCROLL */
-        window.addEventListener("scroll", function () {
-            const topbar = document.querySelector(".topbar");
-
-            if (window.scrollY > 20) {
-                topbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
-            } else {
-                topbar.style.boxShadow = "none";
-            }
-        });
-
-        /* ✅ NEW: SMOOTH SCROLL or Navigation filters */
 function filterProducts(category) {
-    event.preventDefault();  // 🔥 stops page refresh
-
     const products = document.querySelectorAll('.products .card');
 
     products.forEach(card => {
@@ -499,34 +377,21 @@ function filterProducts(category) {
         }
     });
 }
-    // Sparkle light effect
-    setInterval(() => {
-        const sparkle = document.createElement("div");
-        sparkle.classList.add("sparkle");
 
-        sparkle.style.left = Math.random() * window.innerWidth + "px";
-        sparkle.style.top = Math.random() * 300 + "px";
+function searchProducts() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const products = document.querySelectorAll('.products .card');
 
-        document.querySelector(".banner").appendChild(sparkle);
-
-        setTimeout(() => {
-            sparkle.remove();
-        }, 2000);
-    }, 300);
-        
-        <script src="script.js"></script>
-    window.addEventListener("scroll", function () {
-    let header = document.getElementById("header");
-    
-    if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-    } else {
-    header.classList.remove("scrolled");
-    }
+    products.forEach(card => {
+        const name = card.innerText.toLowerCase();
+        card.style.display = name.includes(input) ? 'block' : 'none';
     });
- 
-    </script>
+}
+
+function openModal(img, title, price) {
+    alert(title + " - ₹" + price);
+}
+
+</script>
 
 </body>
-
-</html>
