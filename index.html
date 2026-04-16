@@ -30,31 +30,67 @@ body {
 
 /* ===== TOPBAR / HEADER ===== */
 .topbar {
-    background: #FFF0F5;
-    padding: 5px 0;
-    text-align: center;
+    width: 100%;
+    background: linear-gradient(90deg, #ffe4ec, #fff0f5);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Header */
+/* HEADER ROW */
 .header {
-    margin: 0;
-    padding: 0;
-    line-height: 0; /* removes extra space */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
-/* Logo */
+/* LEFT SIDE (LOGO + NAME) */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* LOGO */
 .logo {
-    height: 110px;
+    height: 60px;   /* smaller = professional */
     width: auto;
-    display: block;
-    margin: 0 auto;
-}
-    .topbar {
-    padding: 0;
 }
 
-.header {
-    line-height: 0;
+/* BRAND TEXT */
+.brand-text h1 {
+    font-size: 18px;
+    margin: 0;
+    color: #222;
+}
+
+.brand-text p {
+    font-size: 12px;
+    margin: 0;
+    color: #777;
+}
+
+/* RIGHT SIDE (SEARCH + WHATSAPP) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* SEARCH BOX */
+.header-right input {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
 }
 
 /* Menu */
@@ -282,13 +318,28 @@ nav a:hover {
 
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
 
-    <!-- Header -->
-    <header class="header">
-        <img src="yuyo-shobha-logo.png" class="logo" alt="Yuyo Shobha Logo">
-    </header>
+    <div class="header">
+
+        <!-- LEFT -->
+        <div class="brand">
+            <img src="logo.png" class="logo">
+            <div class="brand-text">
+                <h1>YUYO SHOBHA FASHION HUB</h1>
+                <p>Shine in Style</p>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="header-right">
+            <input type="text" placeholder="Search...">
+            <a href="https://wa.me/919686032980" class="whatsapp-btn">Order</a>
+        </div>
+
+    </div>
+
+</div>
 
     <!-- Navigation -->
 <nav class="menu">
