@@ -206,11 +206,12 @@ nav a:hover {
 /* CATEGORY SECTION */
 .category-section {
     display: flex;
+    flex-direction: row;        /* horizontal */
     justify-content: center;
     gap: 25px;
     padding: 20px;
     background: #f8f8f8;
-    flex-wrap: wrap;
+    flex-wrap: wrap;           /* responsive */
 }
 
 .category-item {
@@ -222,6 +223,11 @@ nav a:hover {
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
+    transition: 0.3s;
+}
+
+.category-item img:hover {
+    transform: scale(1.1);
 }
 
 .category-item p {
