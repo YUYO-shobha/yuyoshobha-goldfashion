@@ -285,45 +285,51 @@ nav a:hover {
 <!-- TOPBAR -->
 <div class="topbar">
 
+    <!-- Header -->
     <header class="header">
-        <img src="yuyo-shobha-logo.png" class="logo">
+        <img src="yuyo-shobha-logo.png" class="logo" alt="Yuyo Shobha Logo">
     </header>
 
-    <nav class="menu">
-        <a href="#" onclick="filterProducts('all'); return false;">Home</a>
-        <a href="#" onclick="filterProducts('jewellery'); return false;">Jewellery</a>
-        <a href="#" onclick="filterProducts('sarees'); return false;">Sarees</a>
-        <a href="#" onclick="filterProducts('kurtas'); return false;">Kurtas</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <!-- Navigation -->
+<nav class="menu">
+    <a href="#" onclick="filterProducts('all'); return false;">Home</a>
+    <a href="#" onclick="filterProducts('jewellery'); return false;">Jewellery</a>
+    <a href="#" onclick="filterProducts('sarees'); return false;">Sarees</a>
+    <a href="#" onclick="filterProducts('kurtas'); return false;">Kurtas</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 </div>
 
-<!-- CATEGORY -->
 <section class="category-section">
+
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=200">
         <p>Bridal Sets</p>
     </div>
+
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200">
         <p>Bangles</p>
     </div>
+
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=200">
         <p>Rings</p>
     </div>
+
     <div class="category-item">
         <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=200">
         <p>Sarees</p>
     </div>
+
 </section>
 
-<!-- BANNER -->
+<!-- MAIN BANNER -->
 <section class="banner">
     <img src="banner-final.png" class="banner-img">
 </section>
-
+    
 <!-- SEARCH -->
 <div class="search">
     <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
@@ -332,49 +338,61 @@ nav a:hover {
 <!-- PRODUCTS -->
 <section>
     <h2 style="text-align:center;">Our Collection</h2>
-    <div class="products">
+    <div class="products" id="productList">
 
         <div class="card kurtas">
-            <img src="kurta.png" onclick="openModal('kurta.png','Kurta',1000)">
+            <img src="kurta.png" alt="Kurta" onclick="openModal('kurta.png','Kurta',1000)">
             <p>Kurta</p>
+            <p>Price: ₹1000</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Kurta" class="btn" target="_blank">Enquire</a>
         </div>
 
         <div class="card kurtas">
-            <img src="kurta2.png" onclick="openModal('kurta2.png','Kurta',2000)">
+            <img src="kurta2.png" alt="Kurta" onclick="openModal('kurta2.png','Kurta',2000)">
             <p>Kurta2</p>
+            <p>Price: ₹2000</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Kurta4" class="btn" target="_blank">Enquire</a>
+        </div>
+
+        <div class="card kurtas">
+            <img src="kurta3.png" alt="Kurta" onclick="openModal('kurta3.png','Kurta',1500)">
+            <p>Kurta3</p>
+            <p>Price: ₹1500</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Kurta3" class="btn" target="_blank">Enquire</a>
         </div>
 
         <div class="card jewellery">
-            <img src="chain2.png" onclick="openModal('chain2.png','Chain',499)">
-            <p>Chain</p>
+            <img src="chain2.png" alt="Red Chain" onclick="openModal('chain2.png','Red Chain',499)">
+            <h4>Red Chain</h4>
+            <p class="price">₹499</p>
+            <a href="https://wa.me/919686032980?text=I want Red Chain" class="btn" target="_blank">Order on WhatsApp</a>
         </div>
 
         <div class="card sarees">
-            <img src="saree1.png" onclick="openModal('saree1.png','Saree',300)">
+            <img src="saree1.png" alt="Saree" onclick="openModal('saree1.png','Yellow Saree',300)">
             <p>Saree</p>
+            <p>Price: ₹300</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Enquire</a>
         </div>
 
     </div>
 </section>
 
-<!-- CONTACT -->
-<div id="contact">
-    <h3>Contact</h3>
-    <p>📞 9686032980</p>
+<!-- INFO SECTION -->
+<div class="info-section" id="contact">
+    <div class="info-box">
+        <h3>About Us</h3>
+        <p>YUYO Shobha Fashion Hub is your destination for stylish <strong>1 gram gold jewellery</strong> and beautiful fashion collections.</p>
+    </div>
 </div>
 
-<!-- SCRIPT -->
 <script>
 
 function filterProducts(category) {
     const products = document.querySelectorAll('.products .card');
 
     products.forEach(card => {
-        if (category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
     });
 }
 
@@ -383,13 +401,27 @@ function searchProducts() {
     const products = document.querySelectorAll('.products .card');
 
     products.forEach(card => {
-        const name = card.innerText.toLowerCase();
+        const name = card.querySelector('p,h4').innerText.toLowerCase();
         card.style.display = name.includes(input) ? 'block' : 'none';
     });
 }
 
-function openModal(img, title, price) {
-    alert(title + " - ₹" + price);
+function openModal(imgSrc, title, price) {
+    const modal = document.getElementById('quickView');
+
+    document.getElementById('mainImage').src = imgSrc;
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalPrice').innerText = "₹" + price;
+
+    // ✅ FIXED LINE ONLY
+    document.getElementById('modalBtn').href =
+        `https://wa.me/919686032980?text=I want ${encodeURIComponent(title)}`;
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('quickView').style.display = 'none';
 }
 
 </script>
