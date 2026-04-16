@@ -291,13 +291,13 @@ nav a:hover {
     </header>
 
     <!-- Navigation -->
-    <nav class="menu">
-        <a onclick="filterProducts('all')">Home</a>
-        <a onclick="filterProducts('jewellery')">Jewellery</a>
-        <a onclick="filterProducts('sarees')">Sarees</a>
-        <a onclick="filterProducts('kurtas')">Kurtas</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <nav class="menu">
+    <a href="#" onclick="filterProducts('all')">Home</a>
+    <a href="#" onclick="filterProducts('jewellery')">Jewellery</a>
+    <a href="#" onclick="filterProducts('sarees')">Sarees</a>
+    <a href="#" onclick="filterProducts('kurtas')">Kurtas</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 </div>
 
@@ -485,23 +485,24 @@ nav a:hover {
             }
         });
 
-        /* ✅ NEW: SMOOTH SCROLL */
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                const targetId = this.getAttribute("href");
+        /* ✅ NEW: SMOOTH SCROLL or Navigation filters */
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute("href");
 
-                if (targetId.startsWith("#")) {
-                    e.preventDefault();
-                    const targetSection = document.querySelector(targetId);
+        if (targetId && targetId.startsWith("#")) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
 
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: "smooth"
-                        });
-                    }
-                }
-            });
-        });
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+    });
+});
+        
     // Sparkle light effect
     setInterval(() => {
         const sparkle = document.createElement("div");
