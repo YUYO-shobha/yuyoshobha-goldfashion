@@ -28,32 +28,58 @@ body {
     color: #333;
 }
 
-/* ===== TOPBAR / HEADER ===== */
+/* ===== TOPBAR (BLACK FULL WIDTH) ===== */
 .topbar {
-    background: #000;              /* full black */
+    background: #000;
     width: 100%;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
-/* HEADER ROW */
+/* ===== HEADER STRUCTURE ===== */
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;   /* logo center */
+    position: relative;
+    line-height: 0;
+}
+/* ===== LOGO (BIGGER & CLEAN) ===== */
+.logo {
+    height: 95px;
 }
 
-/* LEFT SIDE (LOGO + NAME) */
-.brand {
+/* ===== RIGHT SIDE (SEARCH + ORDER BUTTON) ===== */
+.header-right {
+    position: absolute;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* LOGO */
-.logo {
-    height: 70px;
+    /* ===== SEARCH BOX (DARK THEME) ===== */
+.search input {
+    padding: 10px;
+    width: 220px;
+    border-radius: 25px;
+    border: 1px solid #555;
+    background: #222;
+    color: white;
 }
 
+.search input::placeholder {
+    color: #aaa;
+}
+
+/* ===== ORDER BUTTON ===== */
+.order-btn {
+    background: gold;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
 /* BRAND TEXT */
 .brand-text h1 {
     font-size: 18px;
@@ -317,28 +343,26 @@ nav a:hover {
 
 <body>
 
-<div class="topbar">
-
+    <div class="topbar">
     <div class="header">
 
-        <!-- LEFT -->
-        <div class="brand">
-            <img src="yuyo-shobha-logo.png" class="logo" alt="Yuyo Shobha Logo">
-            <div class="brand-text">
-                <h1>YUYO SHOBHA FASHION HUB</h1>
-                <p>Shine in Style</p>
+        <!-- RIGHT SIDE -->
+        <div class="header-right">
+            <div class="search">
+                <input type="text" placeholder="Search...">
             </div>
+
+            <a href="https://blingbag.co.in/" target="_blank" class="order-btn">
+                Order
+            </a>
         </div>
 
-        <!-- RIGHT -->
-        <div class="header-right">
-            <input type="text" placeholder="Search...">
-            <a href="https://wa.me/919686032980" class="whatsapp-btn">Order</a>
-        </div>
+        <!-- CENTER LOGO -->
+        <img src="yuyo-shobha-logo.png" class="logo" alt="Yuyo Shobha Logo">
 
     </div>
-
 </div>
+
 
     <!-- Navigation -->
 <nav class="menu">
