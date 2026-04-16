@@ -292,10 +292,10 @@ nav a:hover {
 
     <!-- Navigation -->
 <nav class="menu">
-    <a href="#"onclick="filterProducts('all')">Home</a>
-    <a href="#"onclick="filterProducts('jewellery')">Jewellery</a>
-    <a href="#"onclick="filterProducts('sarees')">Sarees</a>
-    <a href="#"onclick="filterProducts('kurtas')">Kurtas</a>
+    <a href="#" onclick="filterProducts('all')">Home</a>
+    <a href="#" onclick="filterProducts('jewellery')">Jewellery</a>
+    <a href="#" onclick="filterProducts('sarees')">Sarees</a>
+    <a href="#" onclick="filterProducts('kurtas')">Kurtas</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -486,23 +486,19 @@ nav a:hover {
         });
 
         /* ✅ NEW: SMOOTH SCROLL or Navigation filters */
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        const targetId = this.getAttribute("href");
+function filterProducts(category) {
+    event.preventDefault();  // 🔥 stops page refresh
 
-        if (targetId && targetId.startsWith("#")) {
-            e.preventDefault();
-            const targetSection = document.querySelector(targetId);
+    const products = document.querySelectorAll('.products .card');
 
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
+    products.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
         }
     });
-});
-        
+}
     // Sparkle light effect
     setInterval(() => {
         const sparkle = document.createElement("div");
