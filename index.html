@@ -45,7 +45,7 @@ body {
 }
 /* ===== LOGO (BIGGER & CLEAN) ===== */
 .logo {
-    height: 95px;
+    height: 100px;
 }
 
 /* ===== RIGHT SIDE (SEARCH + ORDER BUTTON) ===== */
@@ -110,10 +110,27 @@ body {
 .whatsapp-btn {
     background: #25D366;
     color: white;
-    padding: 6px 10px;
-    border-radius: 20px;
+    padding: 12px 22px;        /* bigger button */
+    border-radius: 30px;
     text-decoration: none;
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* ICON STYLE */
+.whatsapp-btn .icon {
+    font-size: 18px;
+}
+
+/* HOVER EFFECT */
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 /* Menu */
@@ -353,8 +370,8 @@ nav a:hover {
             </div>
 
             <a href="https://wa.me/919686032980" class="whatsapp-btn">
-                Order
-            </a>
+    <span class="icon">💬</span> Order on WhatsApp
+</a>
         </div>
 
         <!-- CENTER LOGO -->
