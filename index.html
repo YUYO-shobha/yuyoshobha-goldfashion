@@ -330,16 +330,26 @@ nav a:hover {
     border-radius: 10px;
     border: none;
 }
-      #bigImage {
-    cursor: zoom-in;
-  }
 
-  #bigImage.zoomed {
-    transform: scale(1.8);
-    transition: 0.3s;
-    cursor: zoom-out;
-  }
+    
+    /* ===== PRODUCT POPUP ===== */
 
+#bigImage {
+  cursor: zoom-in;
+  max-width: 90%;
+  max-height: 70vh;
+}
+
+#bigImage.zoomed {
+  transform: scale(1.8);
+  transition: 0.3s;
+  cursor: zoom-out;
+}
+
+#thumbnails {
+  margin-top: 10px;
+}
+    
 /* MOBILE */
 @media (max-width: 768px) {
     .info-section {
@@ -465,7 +475,7 @@ nav a:hover {
         
 
         <!-- 👉 POPUP MODAL FOR ALL PRODUCTS (after all products) -->
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; text-align:center;">
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; text-align:center; overflow:auto; padding-bottom:50px;">
   <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
   <img id="bigImage" style="width:400px; margin-top:20px;">
   <div id="thumbnails"></div>
