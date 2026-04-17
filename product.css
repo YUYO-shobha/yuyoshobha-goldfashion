@@ -1,1 +1,47 @@
+.product-container{
+    display:flex;
+    gap:20px;
+    background:white;
+    padding:20px;
+    margin:20px;
+}
 
+#thumbs{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+#thumbs img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    cursor:pointer;
+    border:1px solid #ddd;
+}
+
+#mainImg{
+    width:350px;
+    cursor:zoom-in;
+}
+
+.details{
+    max-width:300px;
+}
+
+#price{
+    color:#b12704;
+}
+
+#waBtn{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+.zoomed{
+    transform:scale(2);
+}
