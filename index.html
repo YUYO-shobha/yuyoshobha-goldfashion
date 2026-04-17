@@ -331,81 +331,24 @@ nav a:hover {
     border: none;
 }
 
-/* ===== PRODUCT CARD LAYOUT ===== */
-.card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-}
 
-/* LEFT IMAGE BOX */
-.imgBox img {
-  width: 120px;
-  cursor: pointer;
-  border-radius: 8px;
-}
+/* ===== BIG IMAGE ZOOM FEATURE  PRODUCT POPUP===== */
 
-/* RIGHT INFO BOX */
-.infoBox {
-  display: flex;
-  flex-direction: column;
-}
-
-/* TEXT STYLES */
-.title {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.price {
-  color: green;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.productDesc {
-  font-size: 13px;
-  color: #555;
-  margin-top: 5px;
-}
-
-/* BUTTON (WHATSAPP) */
-    
-.btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 10px;
-  background: green;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 13px;
-}
-
-/* ===== BIG IMAGE ZOOM FEATURE ===== */
 #bigImage {
   cursor: zoom-in;
   max-width: 90%;
   max-height: 70vh;
-  transition: 0.3s ease;
 }
 
 #bigImage.zoomed {
   transform: scale(1.8);
+  transition: 0.3s;
   cursor: zoom-out;
 }
 
-/* THUMBNAILS (if you use gallery) */
 #thumbnails {
   margin-top: 10px;
-  display: flex;
-  gap: 8px;
 }
-    
 /* MOBILE */
 @media (max-width: 768px) {
     .info-section {
@@ -536,32 +479,24 @@ nav a:hover {
 </div>
 
         <!-- 👉 POPUP MODAL FOR ALL PRODUCTS (after all products) -->
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; overflow:auto; padding:20px;">
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; text-align:center; overflow:auto; padding-bottom:60px;">
 
-  <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer; float:right;">X</span>
+  <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
 
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px;">
+  <h2 id="productTitle" style="color:white;"></h2>
+  <p id="productPrice" style="color:white;"></p>
 
-    <!-- LEFT SIDE (IMAGE) -->
-    <div>
-      <img id="bigImage" style="width:350px;">
-      <div id="thumbnails"></div>
-    </div>
+  <img id="bigImage" style="width:400px; margin-top:20px;">
 
-    <!-- RIGHT SIDE (DETAILS) -->
-    <div style="color:white; max-width:300px; text-align:left;">
-      <h2 id="productTitle"></h2>
-      <p id="productPrice"></p>
+  <div id="thumbnails"></div>
 
-      <p id="productDesc">
-        <!-- description will come here -->
-      </p>
+  <br>
 
-      <a id="whatsappBtn" href="#" target="_blank"
-         style="background:green; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
-        Order on WhatsApp
-      </a>
-    </div>
+  <a id="whatsappBtn" href="#" target="_blank" style="background:green; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
+    Order on WhatsApp
+  </a>
+
+</div>
 
   </div>
 
@@ -676,20 +611,18 @@ function openProduct() {
     "images/saree-4.png"
   ];
 
-let title = "Sky Blue Saree";
-let price = "₹300";
-let desc = "Beautiful sky blue saree perfect for daily wear and functions.";
+  let title = "Sky Blue Saree";
+  let price = "₹300";
 
   document.getElementById("modal").style.display = "block";
   document.getElementById("bigImage").src = images[0];
 
-document.getElementById("productTitle").innerText = title;
-document.getElementById("productPrice").innerText = price;
-document.getElementById("productDesc").innerText = desc;
-}
+  // ✅ ADD THESE
+  document.getElementById("productTitle").innerText = title;
+  document.getElementById("productPrice").innerText = price;
 
-document.getElementById("whatsappBtn").href =
-  "https://wa.me/919686032980?text=I am interested in " + title;
+  document.getElementById("whatsappBtn").href =
+    "https://wa.me/919686032980?text=I am interested in " + title;
 
   let thumbs = document.getElementById("thumbnails");
   thumbs.innerHTML = "";
@@ -698,20 +631,11 @@ document.getElementById("whatsappBtn").href =
     thumbs.innerHTML += '<img src="' + img + '" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage(\'' + img + '\')">';
   });
 
-  // ✅ ZOOM ON CLICK
   document.getElementById("bigImage").onclick = function () {
     this.classList.toggle("zoomed");
   };
 }
-
-function changeImage(img) {
-  document.getElementById("bigImage").src = img;
-}
-
-function closeProduct() {
-  document.getElementById("modal").style.display = "none";
-}
-
+    
 </script>
 
 </body>
