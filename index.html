@@ -594,34 +594,34 @@ function searchProducts() {
     }, 300);
     
 // OPEN MULTIPLE PRODUCT IMAGES
-   <script>
-  function openProduct() {
+<script>
+function openProduct() {
 
-    let images = [
-      "images/saree-1.png",
-      "images/saree-2.png",
-      "images/saree-3.png",
-      "images/saree-4.png"
-    ];
+  let images = [
+    "images/saree-1.png",
+    "images/saree-1.png",
+    "images/saree-1.png",
+    "images/saree-1.png"
+  ];
 
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("bigImage").src = images[0];
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("bigImage").src = images[0];
 
-    let thumbs = document.getElementById("thumbnails");
-    thumbs.innerHTML = "";
+  let thumbs = document.getElementById("thumbnails");
+  thumbs.innerHTML = "";
 
-    images.forEach(function(img) {
-      thumbs.innerHTML += `<img src="${img}" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage('${img}')">`;
-    });
-  }
+  images.forEach(function(img) {
+    thumbs.innerHTML += `<img src="${img}" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage('${img}')">`;
+  });
+}
 
-  function changeImage(img) {
-    document.getElementById("bigImage").src = img;
-  }
+function changeImage(img) {
+  document.getElementById("bigImage").src = img;
+}
 
-  function closeProduct() {
-    document.getElementById("modal").style.display = "none";
-  }
+function closeProduct() {
+  document.getElementById("modal").style.display = "none";
+}
 </script>
 
 </body>
