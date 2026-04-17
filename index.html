@@ -331,13 +331,9 @@ nav a:hover {
     border: none;
 }
 
-
-/* ===== BIG IMAGE ZOOM FEATURE  PRODUCT POPUP===== */
-
+/* PRODUCT POPUP */
 #bigImage {
   cursor: zoom-in;
-  max-width: 90%;
-  max-height: 70vh;
 }
 
 #bigImage.zoomed {
@@ -465,36 +461,22 @@ nav a:hover {
             <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Order on WhatsApp</a>
         </div>
 
-  <div class="card saree">
-    <img src="images/saree-1.png" onclick="openProduct(this.parentElement.parentElement)">
-  </div>
-    <p class="title">Sky Blue Saree</p>
-    <p class="price">₹300</p>
-    <a href="https://wa.me/919686032980?text=I am interested in Sky Blue Saree"
-       class="btn" target="_blank">
-       Order on WhatsApp
-    </a>
+ <body>
+
+  <div class="card">
+    <img src="images/saree-1.png" width="200" onclick="openProduct()">
+    <p>Sky Blue Saree</p>
+    <p>Price: ₹300</p>
   </div>
 
+  <!-- 👉 POPUP FOR ALL PRODUCTS (after all products) -->
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; text-align:center; overflow:auto; padding-bottom:50px;">
+  <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
+  <img id="bigImage" style="width:400px; margin-top:20px;">
+  <div id="thumbnails"></div>
 </div>
 
-        <!-- 👉 POPUP MODAL FOR ALL PRODUCTS (after all products) -->
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; text-align:center; overflow:auto; padding-bottom:60px;">
-
-  <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
-
-  <h2 id="productTitle" style="color:white;"></h2>
-  <p id="productPrice" style="color:white;"></p>
-
-  <img id="bigImage" style="width:400px; margin-top:20px;">
-
-  <div id="thumbnails"></div>
-
-  <br>
-
-  <a id="whatsappBtn" href="#" target="_blank" style="background:green; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
-    Order on WhatsApp
-  </a>
+</body>
 
 </div>
 
@@ -602,6 +584,7 @@ setInterval(() => {
 }, 300);
 
 // ✅ MULTIPLE IMAGE POPUP + ZOOM
+
 function openProduct() {
 
   let images = [
@@ -611,18 +594,8 @@ function openProduct() {
     "images/saree-4.png"
   ];
 
-  let title = "Sky Blue Saree";
-  let price = "₹300";
-
   document.getElementById("modal").style.display = "block";
   document.getElementById("bigImage").src = images[0];
-
-  // ✅ ADD THESE
-  document.getElementById("productTitle").innerText = title;
-  document.getElementById("productPrice").innerText = price;
-
-  document.getElementById("whatsappBtn").href =
-    "https://wa.me/919686032980?text=I am interested in " + title;
 
   let thumbs = document.getElementById("thumbnails");
   thumbs.innerHTML = "";
@@ -631,11 +604,19 @@ function openProduct() {
     thumbs.innerHTML += '<img src="' + img + '" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage(\'' + img + '\')">';
   });
 
+  // ✅ ZOOM ON CLICK
   document.getElementById("bigImage").onclick = function () {
     this.classList.toggle("zoomed");
   };
 }
-    
+
+function changeImage(img) {
+  document.getElementById("bigImage").src = img;
+}
+
+function closeProduct() {
+  document.getElementById("modal").style.display = "none";
+}
 </script>
 
 </body>
