@@ -447,7 +447,17 @@ nav a:hover {
             <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Enquire</a>
         </div>
 
-        <img src="images/saree-1.png" width="200">
+    <div class="card">
+  <img src="images/saree-1.png" width="200" onclick="openProduct()">
+  <p>Sky blue Saree</p>
+  <p>Price: ₹300</p>
+</div>
+
+        <!-- 👉 POPUP FOR ALL PRODUCTS (after all products) -->
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black;">
+    <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
+    <img id="bigImage" style="display:block; margin:auto; width:400px;">
+  </div>
 
 
     </div>
@@ -580,7 +590,17 @@ function searchProducts() {
             sparkle.remove();
         }, 2000);
     }, 300);
-    
+
+    <script>
+  function openProduct(image) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("bigImage").src = image;
+  }
+
+  function closeProduct() {
+    document.getElementById("modal").style.display = "none";
+  }
+
 </script>
 
 </body>
