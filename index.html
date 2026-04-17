@@ -330,6 +330,15 @@ nav a:hover {
     border-radius: 10px;
     border: none;
 }
+      #bigImage {
+    cursor: zoom-in;
+  }
+
+  #bigImage.zoomed {
+    transform: scale(1.8);
+    transition: 0.3s;
+    cursor: zoom-out;
+  }
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -539,14 +548,6 @@ function searchProducts() {
     });
 }
 
-// MODAL OPEN
-    function openModal(imgSrc, title, price) {
-        const modal = document.getElementById('quickView');
-
-        document.getElementById('mainImage').src = imgSrc;
-        document.getElementById('modalTitle').innerText = title;
-        document.getElementById('modalPrice').innerText = "₹" + price;
-
         // ✅ FIXED WHATSAPP LINK
         document.getElementById('modalBtn').href =
             `https://wa.me/919686032980?text=I want ${encodeURIComponent(title)}`;
@@ -554,18 +555,14 @@ function searchProducts() {
         modal.style.display = 'block';
     }
 
-    // MODAL CLOSE
-    function closeModal() {
-        document.getElementById('quickView').style.display = 'none';
-    }
-
     // IMAGE ZOOM
-    const modalImage = document.getElementById('mainImage');
-    if (modalImage) {
-        modalImage.addEventListener('click', function () {
-            this.classList.toggle('zoomed');
-        });
-    }
+    const modalImage = document.getElementById('bigImage');
+
+if (modalImage) {
+  modalImage.addEventListener('click', function () {
+    this.classList.toggle('zoomed');
+  });
+}
 
     // HEADER SHADOW
     window.addEventListener("scroll", function () {
@@ -593,16 +590,15 @@ function searchProducts() {
         }, 2000);
     }, 300);
     
-// OPEN MULTIPLE PRODUCT IMAGES
-<script>
+// ✅ MULTIPLE IMAGE POPUP (FIXED)
 function openProduct() {
 
-let images = [
-  "images/saree-1.png",
-  "images/saree-2.png",
-  "images/saree-3.png",
-  "images/saree-4.png"
-];
+  let images = [
+    "images/saree-1.png",
+    "images/saree-2.png",
+    "images/saree-3.png",
+    "images/saree-4.png"
+  ];
 
   document.getElementById("modal").style.display = "block";
   document.getElementById("bigImage").src = images[0];
@@ -611,7 +607,7 @@ let images = [
   thumbs.innerHTML = "";
 
   images.forEach(function(img) {
-    thumbs.innerHTML += `<img src="${img}" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage('${img}')">`;
+    thumbs.innerHTML += '<img src="' + img + '" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage(\'' + img + '\')">';
   });
 }
 
@@ -622,6 +618,7 @@ function changeImage(img) {
 function closeProduct() {
   document.getElementById("modal").style.display = "none";
 }
+
 </script>
 
 </body>
