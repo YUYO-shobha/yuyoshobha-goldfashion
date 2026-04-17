@@ -448,18 +448,19 @@ nav a:hover {
         </div>
 
     <div class="card">
-    <img src="images/saree-1.png" width="200" onclick="openProduct('images/saree-1.png')">
+    <img src="images/saree-1.png" width="200" onclick="openProduct()">
   <p>Sky blue Saree</p>
   <p>Price: ₹300</p>
    <a href="https://wa.me/919686032980?text=I am interested in Sky blue Saree" class="btn" target="_blank">Order on WhatsApp</a>
 </div>
+        
 
-        <!-- 👉 POPUP FOR ALL PRODUCTS (after all products) -->
-  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black;">
-    <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
-    <img id="bigImage" style="display:block; margin:auto; width:400px;">
-  </div>
-
+        <!-- 👉 POPUP MODAL FOR ALL PRODUCTS (after all products) -->
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; text-align:center;">
+  <span onclick="closeProduct()" style="color:white; font-size:30px; cursor:pointer;">X</span>
+  <img id="bigImage" style="width:400px; margin-top:20px;">
+  <div id="thumbnails"></div>
+</div>
 
     </div>
 </section>
@@ -591,17 +592,36 @@ function searchProducts() {
             sparkle.remove();
         }, 2000);
     }, 300);
+    
+// OPEN MULTIPLE PRODUCT IMAGES
+   <script>
+  function openProduct() {
 
-    <script>
-  function openProduct(image) {
+    let images = [
+      "images/saree-1.png",
+      "images/saree-2.png",
+      "images/saree-3.png",
+      "images/saree-4.png"
+    ];
+
     document.getElementById("modal").style.display = "block";
-    document.getElementById("bigImage").src = image;
+    document.getElementById("bigImage").src = images[0];
+
+    let thumbs = document.getElementById("thumbnails");
+    thumbs.innerHTML = "";
+
+    images.forEach(function(img) {
+      thumbs.innerHTML += `<img src="${img}" width="80" style="margin:5px; cursor:pointer;" onclick="changeImage('${img}')">`;
+    });
+  }
+
+  function changeImage(img) {
+    document.getElementById("bigImage").src = img;
   }
 
   function closeProduct() {
     document.getElementById("modal").style.display = "none";
   }
-
 </script>
 
 </body>
