@@ -331,124 +331,16 @@ nav a:hover {
     border: none;
 }
 
-/* =========================
-   BODY
-========================= */
-body{
-    margin:0;
-    font-family:Arial;
-    background:#f5f5f5;
-}
+    /* Product card section*/
 
-/* =========================
-   PRODUCT CONTAINER
-========================= */
-.product-container{
-    display:flex;
-    gap:20px;
+.product-card{
+    width:200px;
     background:white;
-    padding:20px;
-    border-radius:10px;
-    margin:20px;
-}
-
-/* =========================
-   LEFT THUMBNAILS
-========================= */
-.image-column{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.image-column img{
-    width:70px;
-    height:70px;
-    object-fit:cover;
-    border:1px solid #ddd;
+    padding:10px;
     cursor:pointer;
 }
-
-/* =========================
-   MAIN IMAGE
-========================= */
-.main-image img{
-    width:350px;
-    height:450px;
-    object-fit:cover;
-    cursor:zoom-in;
-    border-radius:5px;
-}
-
-/* =========================
-   DETAILS
-========================= */
-.details{
-    max-width:300px;
-}
-
-#productPrice{
-    color:#b12704;
-    font-size:20px;
-}
-
-/* =========================
-   WHATSAPP BUTTON
-========================= */
-#waBtn{
-    display:inline-block;
-    margin-top:15px;
-    background:#25D366;
-    color:white;
-    padding:10px 15px;
-    text-decoration:none;
-    border-radius:5px;
-}
-
-/* =========================
-   MODAL (LIGHT AMAZON STYLE)
-========================= */
-#modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
+.product-card img{
     width:100%;
-    height:100%;
-    background: rgba(245,245,245,0.98);
-    z-index:9999;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-}
-
-/* MODAL IMAGE */
-#modal img{
-    max-width:80%;
-    max-height:80%;
-    cursor:zoom-in;
-}
-
-/* THUMBNAILS INSIDE MODAL */
-#modal #thumbnails img{
-    width:80px;
-    margin:5px;
-    cursor:pointer;
-    border:1px solid #ccc;
-}
-
-/* CLOSE BUTTON */
-.close-btn{
-    position:absolute;
-    top:20px;
-    right:30px;
-    font-size:30px;
-    cursor:pointer;
-}
-
-/* ZOOM */
-.zoomed{
-    transform:scale(2);
 }
     
 /* MOBILE */
@@ -569,41 +461,13 @@ body{
 
  <body>
 
-<div class="product-container">
+<div class="product-card" onclick="openProduct('saree1')">
+    <img src="images/saree-1.png">
+    <h3>Silk Saree</h3>
+     <p>Price: ₹300</p>
+     <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Order on WhatsApp</a>
+</div>
 
-    <!-- LEFT THUMBNAILS -->
-    <div class="image-column">
-        <img class="thumb" src="images/saree-1.png" onclick="changeImg(this)">
-        <img class="thumb" src="images/saree-2.png" onclick="changeImg(this)">
-        <img class="thumb" src="images/saree-3.png" onclick="changeImg(this)">
-    </div>
-
-    <!-- MAIN IMAGE -->
-    <div class="main-image">
-        <img id="mainImg" src="images/saree-1.png" onclick="openZoom()">
-    </div>
-
-<!-- PRODUCT SECTION -->
-<div class="product-container">
-
-    <!-- LEFT THUMBNAILS -->
-    <div class="image-column" id="thumbnails"></div>
-
-    <!-- MAIN IMAGE -->
-    <div class="main-image">
-        <img id="bigImage" src="images/saree-1.png" onclick="openProduct()">
-    </div>
-
-    <!-- DETAILS -->
-    <div class="details">
-        <h2 id="productName">Elegant Saree</h2>
-        <h3 id="productPrice">₹799</h3>
-
-        <p id="productDesc">
-            Premium silk saree perfect for weddings and special occasions.
-        </p>
-
-        <a id="waBtn" target="_blank">Order on WhatsApp</a>
     </div>
 
 </div>
@@ -718,56 +582,15 @@ setInterval(() => {
     }, 2000);
 }, 300);
 
-// ✅ MULTIPLE IMAGE POPUP + ZOOM
+/* =========================
+   COLLECTION PAGE NAVIGATION
+   (Go from product list → product detail page)
+========================= */
 
-// ===============================
-// OPEN PRODUCT MODAL
-// ===============================
-function openProduct() {
-
-    let images = [
-        "images/saree-1.png",
-        "images/saree-2.png",
-        "images/saree-3.png",
-        "images/saree-4.png"
-    ];
-
-    let modal = document.getElementById("modal");
-    let bigImage = document.getElementById("bigImage");
-    let thumbs = document.getElementById("thumbnails");
-
-    modal.style.display = "flex";
-
-    bigImage.src = images[0];
-
-    thumbs.innerHTML = "";
-
-    images.forEach(function(img){
-
-        let t = document.createElement("img");
-        t.src = img;
-
-        t.onclick = function(){
-            bigImage.src = img;
-            bigImage.classList.remove("zoomed");
-        };
-
-        thumbs.appendChild(t);
-    });
-
-    bigImage.onclick = function(){
-        bigImage.classList.toggle("zoomed");
-    };
+function openProduct(id){
+    window.location.href = "product.html?id=" + id;
 }
-
-
-// ===============================
-// CLOSE MODAL
-// ===============================
-function closeProduct(){
-    document.getElementById("modal").style.display = "none";
-    document.getElementById("bigImage").classList.remove("zoomed");
-}
+    
 </script>
 
 </body>
