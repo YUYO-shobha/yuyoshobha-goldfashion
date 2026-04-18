@@ -1,3 +1,5 @@
+alert("JS is working");
+
 window.onload = function(){
 
 const products = {
