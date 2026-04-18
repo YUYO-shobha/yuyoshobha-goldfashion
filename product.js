@@ -52,3 +52,7 @@ document.getElementById("waBtn").href =
 `https://wa.me/919686032980?text=I want to order ${product.name}`;
 
 };
+
+function zoomImage(){
+    mainImg.classList.toggle("zoomed");
+}
