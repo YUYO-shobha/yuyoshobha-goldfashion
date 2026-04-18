@@ -45,3 +45,19 @@
 .zoomed{
     transform:scale(2);
 }
+
+/* =========================
+   IMAGE ZOOM
+========================= */
+
+#mainImg{
+    width:350px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+/* WHEN CLICKED */
+.zoomed{
+    transform: scale(2);
+    cursor: zoom-out;
+}
