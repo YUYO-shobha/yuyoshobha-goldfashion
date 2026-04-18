@@ -61,3 +61,12 @@
     transform: scale(2);
     cursor: zoom-out;
 }
+
+/* =========================
+   IMAGE ZOOM (CENTER FIX)
+========================= */
+
+.zoomed{
+    transform: scale(2);
+    transform-origin: center;
+}
