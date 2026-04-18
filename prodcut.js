@@ -22,7 +22,23 @@ const products = {
 
 let id = new URLSearchParams(window.location.search).get("id");
 
+console.log("ID:", id);   // 👈 DEBUG
+
 let product = products[id];
+
+console.log("PRODUCT:", product); // 👈 DEBUG
+
+
+/* 🚨 ADD THIS BLOCK (IMPORTANT) */
+if(!product){
+    document.body.innerHTML = "<h2 style='color:red'>Product Not Found</h2>";
+    throw new Error("Invalid Product ID");
+}
+
+
+/* =========================
+   LOAD DATA
+========================= */
 
 document.getElementById("name").innerText = product.name;
 document.getElementById("price").innerText = product.price;
