@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="product.css">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product.css">
 </head>
 
 <body>
 
 <div class="product-container">
 
+    <!-- LEFT IMAGES -->
     <div id="thumbs"></div>
 
+    <!-- MAIN IMAGE -->
     <div>
-        <img id="mainImg" onclick="zoomImage()">
+        <img id="mainImg">
     </div>
 
+    <!-- DETAILS -->
     <div class="details">
         <h2 id="name"></h2>
         <h3 id="price"></h3>
@@ -23,6 +27,11 @@
     </div>
 
 </div>
+
+<script src="product.js"></script>
+
+</body>
+</html>
 
 <script src="product.js"></script>
 
