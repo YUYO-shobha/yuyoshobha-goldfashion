@@ -1,13 +1,5 @@
 window.onload = function(){
 
-  // your full JS code here
-
-}
-
-/* =========================
-   PRODUCT DATABASE
-========================= */
-
 const products = {
   saree1: {
     name: "Elegant Silk Saree",
@@ -21,40 +13,23 @@ const products = {
   }
 };
 
-
-/* =========================
-   GET PRODUCT FROM URL
-========================= */
-
 let id = new URLSearchParams(window.location.search).get("id");
-
-console.log("ID:", id);   // 👈 DEBUG
-
 let product = products[id];
 
-console.log("PRODUCT:", product); // 👈 DEBUG
-
-
-/* 🚨 ADD THIS BLOCK (IMPORTANT) */
+/* ERROR CHECK */
 if(!product){
-    document.body.innerHTML = "<h2 style='color:red'>Product Not Found</h2>";
-    throw new Error("Invalid Product ID");
+    document.body.innerHTML = "<h2>Product Not Found</h2>";
+    return;
 }
 
-
-/* =========================
-   LOAD DATA
-========================= */
-
+/* LOAD DATA */
 document.getElementById("name").innerText = product.name;
 document.getElementById("price").innerText = product.price;
 document.getElementById("desc").innerText = product.desc;
 
-
 /* MAIN IMAGE */
 let mainImg = document.getElementById("mainImg");
 mainImg.src = product.images[0];
-
 
 /* THUMBNAILS */
 let thumbs = document.getElementById("thumbs");
@@ -65,19 +40,13 @@ product.images.forEach(img => {
 
     t.onclick = function(){
         mainImg.src = img;
-        mainImg.classList.remove("zoomed");
     };
 
     thumbs.appendChild(t);
 });
 
-
 /* WHATSAPP */
 document.getElementById("waBtn").href =
 `https://wa.me/919686032980?text=I want to order ${product.name}`;
 
-
-/* ZOOM */
-function zoomImage(){
-    mainImg.classList.toggle("zoomed");
-}
+};
