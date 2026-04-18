@@ -171,22 +171,29 @@ nav a:hover {
     color: #ff4d6d;
 }
 
-/* ✅ FINAL FULL WIDTH BANNER */
-.banner {
-    margin-top: 0;   /* ✅ FIXED */
+/* =========================
+   BANNER
+========================= */
+
+.banner{
     width: 100%;
-    height: auto;
+    max-height: 420px;   /* control height */
+    overflow: hidden;
     position: relative;
 }
 
-.banner-img {
+.banner-img{
     width: 100%;
-    height: auto;        /* 🔥 FIX: allow full image */
+    height: auto;
     display: block;
 }
 
-/* TEXT OVERLAY */
-.banner-overlay {
+
+/* =========================
+   BANNER TEXT
+========================= */
+
+.banner-overlay{
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -195,19 +202,15 @@ nav a:hover {
     text-align: center;
 }
 
-/* TEXT STYLE */
-.banner-overlay h1 {
+.banner-overlay h1{
     font-size: 26px;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
-.banner-overlay p {
+.banner-overlay p{
     font-size: 14px;
+    margin: 0;
 }
-    .banner {
-    position: relative; /* needed for text overlay */
-}
-
 
 /* PRODUCTS */
 .products {
@@ -414,9 +417,17 @@ nav a:hover {
 
 </section>
 
-<!-- MAIN BANNER -->
+<!-- =========================
+     MAIN BANNER
+========================= -->
 <section class="banner">
-    <img src="banner-final.png">
+    <img src="banner-final.png" class="banner-img">
+
+    <!-- TEXT ON BANNER -->
+    <div class="banner-overlay">
+        <h1>Yuyo Shobha</h1>
+        <p>Elegant Gold Fashion</p>
+    </div>
 </section>
 
 <!-- PRODUCTS -->
