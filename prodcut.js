@@ -1,3 +1,9 @@
+window.onload = function(){
+
+  // your full JS code here
+
+}
+
 /* =========================
    PRODUCT DATABASE
 ========================= */
