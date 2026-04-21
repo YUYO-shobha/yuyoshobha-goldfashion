@@ -370,18 +370,24 @@ nav a:hover {
     font-size: 14px;
 }
 
-/* FULL BADGE STYLE (IMPORTANT) */
+    /* DISCOUNT BADGE FIX */
+
+.image-box {
+    position: relative;
+}
+
 .discount-badge {
     position: absolute;
-    top: 8px;
-    left: 8px;
-    background: #CC0C39;
+    top: 10px;
+    left: 10px;
+    background: #e53935;
     color: white;
     font-size: 12px;
-    padding: 4px 6px;
-    border-radius: 4px;
+    padding: 5px 8px;
+    border-radius: 5px;
     font-weight: bold;
 }
+
 </style>
 </head>
 
@@ -498,8 +504,9 @@ nav a:hover {
     <div class="image-box">
         <img src="images/saree-1.png" alt="Silk Saree">
 
-        <!-- Discount badge -->
+           <!-- ✅ CORNER BADGE -->
         <span class="discount-badge">20% OFF</span>
+    </div>
     </div>
 
     <h3>Silk Saree</h3>
