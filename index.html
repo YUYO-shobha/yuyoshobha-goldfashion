@@ -466,19 +466,27 @@ nav a:hover {
  <body>
 
 <div class="product-card" onclick="openProduct('saree1')">
-    <img src="images/saree-1.png">
+
+    <div class="image-box">
+        <img src="images/saree-1.png">
+
+        <!-- Discount badge -->
+        <span class="discount-badge">-20%</span>
+    </div>
+
     <h3>Silk Saree</h3>
 
-        <!-- 🔥 PASTE HERE -->
-    <p class="offer-text">🔥 Opening Offer</p>
-
-     <!-- PRICE SECTION -->
-       <p class="price">
-        <span class="old-price">₹300</span>
+    <!-- PRICE SECTION -->
+    <div class="price-box">
         <span class="new-price">₹240</span>
-        <span class="discount">20% OFF</span>
-    </p>
-     <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Order on WhatsApp</a>
+        <span class="old-price">₹300</span>
+    </div>
+
+    <a href="https://wa.me/919686032980?text=I am interested in Silk Saree" 
+       class="btn" target="_blank">
+        Order on WhatsApp
+    </a>
+
 </div>
 
     </div>
