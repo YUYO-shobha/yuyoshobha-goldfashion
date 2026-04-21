@@ -358,22 +358,30 @@ nav a:hover {
 }
 
 
-        .new-price {
-            color: #B12704;
-            font-size: 20px;
-            font-weight: 700;
-        }
+       .new-price {
+    color: #B12704;
+    font-size: 20px;
+    font-weight: 700;
+}
 
-        .old-price {
-            color: #565959;
-            text-decoration: line-through;
-            font-size: 14px;
-        }
+.old-price {
+    color: #565959;
+    text-decoration: line-through;
+    font-size: 14px;
+}
 
-        .discount-badge {
-            background: #CC0C39;
-            color: white;
-        }
+/* FULL BADGE STYLE (IMPORTANT) */
+.discount-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #CC0C39;
+    color: white;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
 </style>
 </head>
 
@@ -485,7 +493,7 @@ nav a:hover {
 
  <body>
 
-<div class="product-card" onclick="openProduct('saree1')">
+<div class="product-card">
 
     <div class="image-box">
         <img src="images/saree-1.png" alt="Silk Saree">
@@ -496,9 +504,7 @@ nav a:hover {
 
     <h3>Silk Saree</h3>
 
-    <!-- PRICE SECTION -->
     <div class="price-box">
-
         <div class="price-row">
             <span class="new-price">₹240</span>
             <span class="old-price">₹300</span>
@@ -507,10 +513,8 @@ nav a:hover {
         <div class="save-text">
             You Save ₹60 (20% off)
         </div>
-
     </div>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/919686032980?text=I am interested in Silk Saree"
        class="btn" target="_blank">
         Order on WhatsApp
