@@ -330,3 +330,18 @@
     font-size: 13px;
     margin-top: 2px;
 }
+
+.product-card .price-box .new-price {
+    color: #B12704 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+.product-card .price-box .old-price {
+    color: #565959 !important;
+    text-decoration: line-through !important;
+}
+
+.product-card .discount-badge {
+    background: #CC0C39 !important;
+}
