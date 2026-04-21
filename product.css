@@ -158,3 +158,9 @@
     text-decoration: line-through;
     font-size: 13px;
 }
+
+.discount-text {
+    color: #007600;
+    font-size: 13px;
+    font-weight: 500;
+}
