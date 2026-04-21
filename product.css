@@ -97,3 +97,64 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+/* ===== FINAL PROFESSIONAL PRODUCT STYLE ===== */
+
+/* Product Card (safe enhancement) */
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Image */
+.image-box {
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Discount badge */
+.discount-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #f4b400;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Price section */
+.price-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 6px 0;
+}
+
+/* New price */
+.new-price {
+    color: #d32f2f;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Old price */
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 13px;
+}
