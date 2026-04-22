@@ -1,9 +1,11 @@
 .product-container{
     display:flex;
-    gap:20px;
+    gap:40px;                 /* increased spacing */
     background:white;
     padding:20px;
-    margin:20px;
+    margin:20px auto;         /* center it */
+    align-items:flex-start;   /* align properly */
+    max-width:1000px;         /* control width */
 }
 
 #thumbs{
@@ -31,7 +33,7 @@
 }
 
 .details{
-    max-width:300px;
+    max-width:350px;
 }
 
 #price{
@@ -44,7 +46,9 @@
     color:white;
     padding:10px 15px;
     text-decoration:none;
-    margin-top:10px;
+    margin-top:15px;
+    border-radius:6px;
+    width:auto;
 }
 
 /* Zoom */
