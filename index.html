@@ -400,7 +400,7 @@ nav a:hover {
     padding: 20px;
 }
 
-    /* CUSTOMER FEEDBACK SECTION */
+    /* CUSTOMER REVIEW SECTION */
 .reviews-section {
     background: #111;
     color: white;
@@ -408,10 +408,6 @@ nav a:hover {
     text-align: center;
     margin: 20px;
     border-radius: 10px;
-}
-
-.reviews-section h2 {
-    color: gold;
 }
 
 .review-form {
@@ -432,7 +428,6 @@ nav a:hover {
 
 .review-form textarea {
     height: 100px;
-    resize: none;
 }
 
 .review-form button {
@@ -443,11 +438,6 @@ nav a:hover {
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-}
-
-.review-form button:hover {
-    background: white;
-    color: black;
 }
 
 .review-card {
@@ -621,24 +611,19 @@ nav a:hover {
     <h2>Customer Reviews</h2>
     <p>See what our happy customers say about us</p>
 
-    <!-- REVIEW FORM -->
     <div class="review-form">
 
         <input type="text" id="name" placeholder="Your Name" required>
 
         <input type="text" id="product" placeholder="Product Name" required>
 
-        <!-- STAR RATING -->
-        <div class="stars">
-            <label>Rating:</label>
-            <select id="rating">
-                <option value="5">⭐⭐⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="1">⭐</option>
-            </select>
-        </div>
+        <select id="rating">
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+        </select>
 
         <textarea id="comment" placeholder="Write your review..." required></textarea>
 
@@ -646,7 +631,6 @@ nav a:hover {
 
     </div>
 
-    <!-- DISPLAY REVIEWS -->
     <div id="review-list"></div>
 
 </section>
@@ -737,7 +721,10 @@ function openProduct(id){
     window.location.href = "product.html?id=" + id;
 }
 
-<!-- ⭐ JAVASCRIPT FOR REVIEWS -->
+// Load reviews when page opens
+window.onload = function () {
+    loadReviews();
+};
 
 function addReview() {
 
@@ -746,30 +733,53 @@ function addReview() {
     let rating = document.getElementById("rating").value;
     let comment = document.getElementById("comment").value;
 
-    if(name === "" || product === "" || comment === "") {
+    if (name === "" || product === "" || comment === "") {
         alert("Please fill all fields");
         return;
     }
 
-    let review = document.createElement("div");
-    review.classList.add("review-card");
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-    review.innerHTML = `
-        <h3>${name}</h3>
-        <p><b>Product:</b> ${product}</p>
-        <p><b>Rating:</b> ${"⭐".repeat(rating)}</p>
-        <p>${comment}</p>
-    `;
+    let newReview = {
+        name: name,
+        product: product,
+        rating: rating,
+        comment: comment
+    };
 
-    document.getElementById("review-list").appendChild(review);
+    reviews.push(newReview);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    displayReview(newReview);
 
     // clear form
     document.getElementById("name").value = "";
     document.getElementById("product").value = "";
     document.getElementById("comment").value = "";
 }
-    
+
+function loadReviews() {
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.forEach(review => displayReview(review));
+}
+
+function displayReview(review) {
+
+    let reviewBox = document.createElement("div");
+    reviewBox.classList.add("review-card");
+
+    reviewBox.innerHTML = `
+        <h3>${review.name}</h3>
+        <p><b>Product:</b> ${review.product}</p>
+        <p><b>Rating:</b> ${"⭐".repeat(review.rating)}</p>
+        <p>${review.comment}</p>
+    `;
+
+    document.getElementById("review-list").appendChild(reviewBox);
+}
+
 </script>
+
 
 </body>
 </html>
