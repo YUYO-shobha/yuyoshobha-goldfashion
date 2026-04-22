@@ -400,9 +400,57 @@ nav a:hover {
     padding: 20px;
 }
 
+    /* CUSTOMER FEEDBACK SECTION */
+.feedback-section {
+    background: #111;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.feedback-section h2 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.feedback-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.feedback-section input,
+.feedback-section textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.feedback-section textarea {
+    height: 100px;
+    resize: none;
+}
+
+.feedback-section button {
+    background: gold;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.feedback-section button:hover {
+    background: white;
+    color: black;
+}
+
     </style>
-</head>
-</style>
 </head>
 
 <body>
@@ -560,8 +608,24 @@ nav a:hover {
 
 </section>
 
+<!-- CUSTOMER FEEDBACK SECTION -->
+<section class="feedback-section">
+    <h2>Customer Feedback</h2>
+    <p>We value your feedback! Please share your experience with our products.</p>
 
-<!-- FOOTER -->
+    <form action="https://wa.me/91XXXXXXXXXX" method="get" target="_blank">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="text" name="product" placeholder="Product Name" required>
+
+        <textarea name="message" placeholder="Write your feedback..." required></textarea>
+
+        <button type="submit">Send Feedback on WhatsApp</button>
+
+    </form>
+</section>
+    
 <!-- FOOTER -->
 <div class="footer">
     <div class="footer-links">
