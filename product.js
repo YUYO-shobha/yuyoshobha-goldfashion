@@ -1,5 +1,3 @@
-alert("JS is working");
-
 window.onload = function(){
 
 const products = {
@@ -53,6 +51,8 @@ document.getElementById("waBtn").href =
 
 };
 
+/* ZOOM FUNCTION */
 function zoomImage(){
+    let mainImg = document.getElementById("mainImg");
     mainImg.classList.toggle("zoomed");
 }
