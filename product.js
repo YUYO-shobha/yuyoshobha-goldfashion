@@ -3,7 +3,8 @@ window.onload = function(){
 const products = {
   saree1: {
     name: "Elegant Silk Saree",
-    price: "₹799",
+    originalPrice: 300,
+    discount: 20,
     desc: "Premium silk saree perfect for weddings and parties.",
     images: [
       "images/saree-1.png",
@@ -22,10 +23,25 @@ if(!product){
     return;
 }
 
+
+  /* PRICE CALCULATION SECTION*/
+let finalPrice = product.originalPrice - (product.originalPrice * product.discount / 100);
+let saveAmount = product.originalPrice - finalPrice;
+  
 /* LOAD DATA */
 document.getElementById("name").innerText = product.name;
-document.getElementById("price").innerText = product.price;
 document.getElementById("desc").innerText = product.desc;
+
+/* PRICE SECTION (NEW) */
+document.getElementById("priceBox").innerHTML = `
+    <div class="price-row">
+        <span class="new-price">₹${finalPrice}</span>
+        <span class="old-price">₹${product.originalPrice}</span>
+    </div>
+    <div class="save-text">
+        You Save ₹${saveAmount} (${product.discount}% off)
+    </div>
+`;
 
 /* MAIN IMAGE */
 let mainImg = document.getElementById("mainImg");
