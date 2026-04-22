@@ -26,6 +26,9 @@
     cursor: zoom-in;
     transition: transform 0.3s ease;
 }
+#mainImg{
+    max-width:100%;
+}
 
 .details{
     max-width:300px;
@@ -130,4 +133,31 @@
     color: #ff6600;
     font-weight: bold;
     font-size: 14px;
+}
+
+
+
+@media(max-width:768px){
+    .product-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    #thumbs{
+        flex-direction:row;
+        justify-content:center;
+    }
+
+    #thumbs img{
+        width:60px;
+        height:60px;
+    }
+
+    #mainImg{
+        width:90%;
+    }
+
+    .details{
+        text-align:center;
+    }
 }
