@@ -22,6 +22,10 @@
     border:1px solid #ddd;
 }
 
+#thumbs img:hover{
+    border:2px solid #d4af37;
+}
+
 /* Main Image */
 #mainImg{
     width:350px;
