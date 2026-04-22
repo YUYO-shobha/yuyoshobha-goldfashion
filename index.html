@@ -401,7 +401,7 @@ nav a:hover {
 }
 
     /* CUSTOMER FEEDBACK SECTION */
-.feedback-section {
+.reviews-section {
     background: #111;
     color: white;
     padding: 30px;
@@ -410,32 +410,32 @@ nav a:hover {
     border-radius: 10px;
 }
 
-.feedback-section h2 {
+.reviews-section h2 {
     color: gold;
-    margin-bottom: 10px;
 }
 
-.feedback-section form {
+.review-form {
+    max-width: 400px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 400px;
-    margin: auto;
 }
 
-.feedback-section input,
-.feedback-section textarea {
+.review-form input,
+.review-form textarea,
+.review-form select {
     padding: 10px;
     border-radius: 5px;
     border: none;
 }
 
-.feedback-section textarea {
+.review-form textarea {
     height: 100px;
     resize: none;
 }
 
-.feedback-section button {
+.review-form button {
     background: gold;
     color: black;
     padding: 10px;
@@ -445,11 +445,18 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.feedback-section button:hover {
+.review-form button:hover {
     background: white;
     color: black;
 }
 
+.review-card {
+    background: #222;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
     </style>
 </head>
 
@@ -608,22 +615,40 @@ nav a:hover {
 
 </section>
 
-<!-- CUSTOMER FEEDBACK SECTION -->
-<section class="feedback-section">
-    <h2>Customer Feedback</h2>
-    <p>We value your feedback! Please share your experience with our products.</p>
+<!-- ⭐ CUSTOMER REVIEWS SECTION -->
+<section class="reviews-section">
 
-    <form action="https://wa.me/91XXXXXXXXXX" method="get" target="_blank">
-        
-        <input type="text" name="name" placeholder="Your Name" required>
+    <h2>Customer Reviews</h2>
+    <p>See what our happy customers say about us</p>
 
-        <input type="text" name="product" placeholder="Product Name" required>
+    <!-- REVIEW FORM -->
+    <div class="review-form">
 
-        <textarea name="message" placeholder="Write your feedback..." required></textarea>
+        <input type="text" id="name" placeholder="Your Name" required>
 
-        <button type="submit">Send Feedback on WhatsApp</button>
+        <input type="text" id="product" placeholder="Product Name" required>
 
-    </form>
+        <!-- STAR RATING -->
+        <div class="stars">
+            <label>Rating:</label>
+            <select id="rating">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+            </select>
+        </div>
+
+        <textarea id="comment" placeholder="Write your review..." required></textarea>
+
+        <button onclick="addReview()">Submit Review</button>
+
+    </div>
+
+    <!-- DISPLAY REVIEWS -->
+    <div id="review-list"></div>
+
 </section>
     
 <!-- FOOTER -->
@@ -710,6 +735,38 @@ setInterval(() => {
 
 function openProduct(id){
     window.location.href = "product.html?id=" + id;
+}
+
+<!-- ⭐ JAVASCRIPT FOR REVIEWS -->
+
+function addReview() {
+
+    let name = document.getElementById("name").value;
+    let product = document.getElementById("product").value;
+    let rating = document.getElementById("rating").value;
+    let comment = document.getElementById("comment").value;
+
+    if(name === "" || product === "" || comment === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    let review = document.createElement("div");
+    review.classList.add("review-card");
+
+    review.innerHTML = `
+        <h3>${name}</h3>
+        <p><b>Product:</b> ${product}</p>
+        <p><b>Rating:</b> ${"⭐".repeat(rating)}</p>
+        <p>${comment}</p>
+    `;
+
+    document.getElementById("review-list").appendChild(review);
+
+    // clear form
+    document.getElementById("name").value = "";
+    document.getElementById("product").value = "";
+    document.getElementById("comment").value = "";
 }
     
 </script>
