@@ -289,14 +289,15 @@ nav a:hover {
     /* ✅ HORIZONTAL + MOBILE RESPONSIVE */
 .info-section {
     display: flex;
-    flex-direction: row;   /* 👈 ADD THIS */
     justify-content: space-between;
     gap: 20px;
     padding: 30px;
+    flex-wrap: nowrap;   /* 🔥 IMPORTANT */
 }
 
 .info-box {
     flex: 1;
+    min-width: 250px;   /* 🔥 prevents breaking */
     background: #ffffff;
     padding: 20px;
     border-radius: 12px;
@@ -309,6 +310,7 @@ nav a:hover {
     border-radius: 10px;
     border: none;
 }
+
 
     /* Product card section*/
 
