@@ -289,16 +289,23 @@ nav a:hover {
     /* ✅ HORIZONTAL + MOBILE RESPONSIVE */
 .info-section {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     gap: 20px;
     padding: 30px;
     width: 100%;
+    flex-wrap: nowrap;
 }
 
 .info-box {
     flex: 1;
-    min-width: 0;
+    max-width: 33.33%;
+}
+
+/* Map fix */
+.info-box iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
 }
 
 /* MOBILE */
@@ -308,7 +315,7 @@ nav a:hover {
     }
 
     .info-box {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
