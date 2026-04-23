@@ -31,9 +31,9 @@ const products = {
     discount: 15,
     desc: "Traditional tissue saree with rich texture and elegance.",
     images: [
-      "images/saree3-1.png",
-      "images/saree3-2.png",
-      "images/saree3-3.png"
+      "images/saree3-1.jpg",
+      "images/saree3-2.jpg",
+      "images/saree3-3.jpg"
     ]
   }
 };
