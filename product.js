@@ -11,9 +11,23 @@ const products = {
       "images/saree-2.png",
       "images/saree-3.png"
     ]
+},
+
+    saree2: {
+    name: "Mangalagiri Pattu Saree",
+    originalPrice: 5000,
+    discount: 15,
+    desc: "Traditional handwoven Mangalagiri silk saree with rich texture and elegance.",
+    images: [
+      "images/saree2-1.png",
+      "images/saree2-2.png",
+      "images/saree2-3.png"
+    ]
   }
 };
 
+/* your remaining code continues here... */
+  
 let id = new URLSearchParams(window.location.search).get("id");
 let product = products[id];
 
