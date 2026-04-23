@@ -81,109 +81,96 @@
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
-    
-<!-- ================= KURTAS ================= -->
-    
-<section id="kurtas">
-<h2 style="text-align:center;">Kurtas</h2>
+<!-- PRODUCTS -->
+<section>
+    <h2 style="text-align:center;">Our Collection</h2>
+    <div class="products" id="productList">
 
-<div class="products">
-
-    <div class="card" onclick="openProduct('kurta1')">
-        <img src="kurta.png">
-        <p>Kurta</p>
-        <p>₹1000</p>
-        <a class="btn" href="https://wa.me/919686032980?text=I am interested in Kurta">Enquire</a>
-    </div>
-
-    <div class="card" onclick="openProduct('kurta2')">
-        <img src="kurta2.png">
-        <p>Kurta2</p>
-        <p>₹2000</p>
-        <a class="btn" href="https://wa.me/919686032980?text=I am interested in Kurta2">Enquire</a>
-    </div>
-
-</div>
-</section>
-
-
-<!-- JEWELLERY -->
-<section id="jewellery">
-<h2 style="text-align:center;">Jewellery</h2>
-
-<div class="products">
-
-    <div class="card" onclick="openProduct('chain1')">
-        <img src="chain2.png">
-        <p>Red Chain</p>
-        <p>₹499</p>
-        <a class="btn" href="https://wa.me/919686032980?text=I want Red Chain">Order on WhatsApp</a>
-    </div>
-
-</div>
-</section>
-
-
-<!-- SAREES -->
-<section id="sarees">
-<h2 style="text-align:center;">Sarees</h2>
-
-<div class="products">
-
-    <div class="card" onclick="openProduct('saree1')">
-        <img src="saree1.png">
-        <p>Yellow Saree</p>
-        <p>₹300</p>
-        <a class="btn" href="https://wa.me/919686032980?text=I am interested in Yellow Saree">Order on WhatsApp</a>
-    </div>
-
-    <!-- SILK SAREE (KEEP SPECIAL DESIGN) -->
-    <div class="product-card" onclick="openProduct('silkSaree')">
-
-        <div class="image-box">
-            <img src="images/saree-1.png">
-            <span class="discount-badge">20% OFF</span>
+        <div class="card kurtas">
+            <img src="kurta.png" alt="Kurta" onclick="openModal('kurta.png','Kurta',1000)">
+            <p>Kurta</p>
+            <p>Price: ₹1000</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Kurta" class="btn" target="_blank">Enquire</a>
         </div>
 
-        <h3>Silk Saree</h3>
-
-        <div class="price-box">
-            <div class="price-row">
-                <span class="new-price">₹240</span>
-                <span class="old-price">₹300</span>
-            </div>
-            <div class="save-text">You Save ₹60 (20% off)</div>
+        <div class="card kurtas">
+            <img src="kurta2.png" alt="Kurta" onclick="openModal('kurta2.png','Kurta',2000)">
+            <p>Kurta2</p>
+            <p>Price: ₹2000</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Kurta4" class="btn" target="_blank">Enquire</a>
         </div>
 
-        <a class="btn"
-           href="https://wa.me/919686032980?text=I am interested in Silk Saree">
-           Order on WhatsApp
-        </a>
+        <div class="card kurtas">
+            <img src="kurta3.png" alt="Kurta" onclick="openModal('kurta3.png','Kurta',1500)">
+            <p>Kurta3</p>
+            <p>Price: ₹1500</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Kurta3" class="btn" target="_blank">Enquire</a>
+        </div>
+
+      <div class="card jewellery">
+            <img src="chain2.png" alt="Red Chain" onclick="openModal('chain2.png','Red Chain',499)">
+            <h4>Red Chain</h4>
+            <p class="price">₹499</p>
+            <a href="https://wa.me/919686032980?text=I want Red Chain" class="btn" target="_blank">Order on WhatsApp</a>
+        </div>
+    
+
+        <div class="card sarees">
+            <img src="saree1.png" alt="Saree" onclick="openModal('saree1.png','Yellow Saree',300)">
+            <p>Saree</p>
+            <p>Price: ₹300</p>
+            <a href="https://wa.me/919686032980?text=I am interested in Yellow Saree" class="btn" target="_blank">Order on WhatsApp</a>
+        </div>
+
+
+<div class="product-card" onclick="openProduct('saree1')">
+
+    <div class="image-box">
+        <img src="images/saree-1.png" alt="Silk Saree">
+
+        <span class="discount-badge">20% OFF</span>
+    </div>
+
+    <h3>Silk Saree</h3>
+
+    <div class="price-box">
+        <div class="price-row">
+            <span class="new-price">₹240</span>
+            <span class="old-price">₹300</span>
+        </div>
+
+        <div class="save-text">
+            You Save ₹60 (20% off)
+        </div>
+    </div>
+
+    <a href="https://wa.me/919686032980?text=I am interested in Silk Saree"
+       class="btn" target="_blank">
+        Order on WhatsApp
+    </a>
+
+</div>
+
+</div>
 
     </div>
 
 </div>
+
+<!-- MODAL -->
+<div id="modal" onclick="closeProduct()">
+
+    <span class="close-btn">&times;</span>
+
+    <img id="bigImage">
+
+    <div id="thumbnails"></div>
+
+</div>
+
 </section>
 
-<!-- ================= FINAL PRODUCT MODAL (ONLY ONE) ================= -->
 
-<div id="modal" class="modal" onclick="closeProduct()">
-
-    <div class="modal-content" onclick="event.stopPropagation()">
-
-        <!-- Close button -->
-        <span class="close-btn" onclick="closeProduct()">&times;</span>
-
-        <!-- Main image -->
-        <img id="bigImage" src="" alt="Product Image">
-
-        <!-- Thumbnails (for multiple images if you add later) -->
-        <div id="thumbnails"></div>
-
-    </div>
-
-</div>
 
 
 <!-- ⭐ CUSTOMER REVIEWS SECTION -->
