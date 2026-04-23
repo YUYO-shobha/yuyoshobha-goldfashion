@@ -29,146 +29,96 @@ body {
     color: #333;
 }
 
-/* ===== TOPBAR (BLACK FULL WIDTH) ===== */
+/* TOPBAR */
 .topbar {
+    background: #f8d7e0;
+    color: #000;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+/* HEADER */
+.main-header {
     background: #000;
-    width: 100%;
-    padding: 5px 20px;
-}
-
-/* ===== HEADER STRUCTURE ===== */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  /* 👈 change here */
-    padding: 10px 20px;
-    flex-wrap: wrap;                 /* 👈 important for mobile */
-}
-    
-/* ===== LOGO (BIGGER & CLEAN) ===== */
-.logo {
-    height: 110px;
-}
-
-/* ===== RIGHT SIDE (SEARCH + ORDER BUTTON) ===== */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-    /* ===== SEARCH BOX (DARK THEME) ===== */
-.search input {
-    padding: 10px;
-    width: 220px;
-    border-radius: 25px;
-    border: 1px solid #555;
-    background: #222;
     color: white;
-}
-
-.search input::placeholder {
-    color: #aaa;
-}
-
-/* ===== ORDER BUTTON ===== */
-.order-btn {
-    background: gold;
-    color: black;
-    padding: 8px 14px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-/* BRAND TEXT */
-.brand-text h1 {
-    font-size: 18px;
-    margin: 0;
-    color: #fff;   /* changed */
-}
-
-.brand-text p {
-    font-size: 12px;
-    margin: 0;
-    color: #ccc;   /* changed */
-}
-/* RIGHT SIDE (SEARCH + WHATSAPP) */
-.header-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    padding: 10px 30px;
+    flex-wrap: wrap;
 }
 
-/* SEARCH BOX */
-.header-right input {
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+/* LOGO */
+.logo-section img {
+    height: 70px;
 }
 
-/* WHATSAPP BUTTON */
-.whatsapp-btn {
-    background: #25D366;
-    color: white;
-    padding: 12px 22px;        /* bigger button */
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+/* BRAND NAME */
+.brand-name {
+    text-align: center;
 }
 
-/* ICON STYLE */
-.whatsapp-btn .icon {
-    font-size: 18px;
+.brand-name h1 {
+    color: #ffb6c1;
+    font-size: 26px;
+    margin: 0;
+    letter-spacing: 2px;
 }
 
-/* HOVER EFFECT */
-.whatsapp-btn:hover {
-    background: #1ebe5d;
-    transform: scale(1.05);
-    transition: 0.3s;
+.brand-name p {
+    color: gold;
+    margin: 0;
+    font-size: 14px;
 }
 
-/* Menu */
-.menu {
-    margin-top: 5px;
-}
-
-/* Menu Links */
-.menu a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-/* Hover Effect */
-.menu a:hover {
-    color: #d4a373; /* gold tone */
+/* ICONS */
+.header-icons span {
+    margin-left: 15px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* NAVBAR */
-nav {
-    background: white;
-    padding: 10px;
-    text-align: center;
-    border-top: 1px solid #eee;
+.navbar {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 12px;
+    border-top: 1px solid #333;
 }
 
-nav a {
-    margin: 0 12px;
+.navbar a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    font-weight: 600;
+    font-size: 16px;
+    position: relative;
 }
 
-nav a:hover {
-    color: #ff4d6d;
+/* HOVER EFFECT */
+.navbar a:hover {
+    color: #ffb6c1;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* =========================
@@ -452,34 +402,44 @@ nav a:hover {
 
 <body>
 
- <div class="topbar">
-    <div class="header">
-
-        <!-- RIGHT SIDE -->
-        <div class="header-right">
-            <div class="search">
-                <input type="text" placeholder="Search...">
-            </div>
-
-            <a href="https://wa.me/919686032980" class="whatsapp-btn">
-    <span class="icon">💬</span> Order on WhatsApp
-</a>
-        </div>
-
-        <!-- CENTER LOGO -->
-        <img src="yuyo-shobha-logo.png" class="logo" alt="Yuyo Shobha Logo">
-
-    </div>
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>🚚 Free Shipping above ₹999</span>
+  <span>✨ Premium Quality</span>
+  <span>🔄 Easy Returns</span>
+  <span>📞 Customer Support</span>
 </div>
 
+<!-- HEADER -->
+<header class="main-header">
+  
+  <!-- LEFT: LOGO -->
+  <div class="logo-section">
+    <img src="yuyo-shobha-logo.png" alt="YS Logo">
+  </div>
 
-    <!-- Navigation -->
-<nav class="menu">
-    <a href="#" onclick="filterProducts('all'); return false;">Home</a>
-    <a href="#" onclick="filterProducts('jewellery'); return false;">Jewellery</a>
-    <a href="#" onclick="filterProducts('sarees'); return false;">Sarees</a>
-    <a href="#" onclick="filterProducts('kurtas'); return false;">Kurtas</a>
-    <a href="#contact">Contact</a>
+  <!-- CENTER: BRAND NAME -->
+  <div class="brand-name">
+    <h1>YUYOSHOBHA FASHION HUB</h1>
+    <p>Shine in Style</p>
+  </div>
+
+  <!-- RIGHT: ICONS -->
+  <div class="header-icons">
+    <span>🔍</span>
+    <span>👤</span>
+    <span>🛒</span>
+  </div>
+
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#">Home</a>
+  <a href="#">Jewellery</a>
+  <a href="#">Sarees</a>
+  <a href="#">Kurtas</a>
+  <a href="#">Contact Us</a>
 </nav>
 
 </div>
