@@ -23,8 +23,21 @@ const products = {
       "images/saree2-2.png",
       "images/saree2-3.png"
     ]
+  },
+
+     saree3: {
+    name: "Tissue Saree",
+    originalPrice: 3000,
+    discount: 15,
+    desc: "Traditional tissue saree with rich texture and elegance.",
+    images: [
+      "images/saree3-1.png",
+      "images/saree3-2.png",
+      "images/saree3-3.png"
+    ]
   }
 };
+
 
 /* your remaining code continues here... */
   
