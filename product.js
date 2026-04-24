@@ -59,7 +59,31 @@ originalPrice: 4000,
     "images/saree5-2.jpg",
     "images/saree5-3.jpg"
   ]
-}
+}, 
+  
+// 💎 Jewellery starts here
+
+  necklace1: {
+    name: "Gold Necklace",
+    originalPrice: 1000,
+    discount: 2,
+    desc: "Elegant gold necklace for special occasions.",
+    images: [
+      "images/necklace1-1.jpg"
+    ]
+  },
+
+  jewel3: {
+    name: "Earrings",
+    originalPrice: 1500,
+    discount: 5,
+    desc: "Stylish and elegant earrings for all occasions.",
+    images: [
+      "images/jewel3-1.jpg",
+      "images/jewel3-2.jpg"
+    ]
+  }
+
 };
 
 
