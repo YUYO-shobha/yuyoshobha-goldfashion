@@ -1,6 +1,58 @@
 window.onload = function(){
 
 const products = {
+
+  kurta1: {
+    name: "Kurta",
+    originalPrice: 1000,
+    discount: 5,
+    desc: "Comfortable daily wear kurta.",
+    images: [
+      "kurta.png"
+    ]
+  },
+
+  kurta2: {
+    name: "Kurta 2",
+    originalPrice: 2000,
+    discount: 5,
+    desc: "Stylish kurta for special occasions.",
+    images: [
+      "kurta2.png"
+    ]
+  },
+
+  kurta3: {
+    name: "Kurta 3",
+    originalPrice: 1500,
+    discount: 5,
+    desc: "Elegant and lightweight kurta.",
+    images: [
+      "kurta3.png"
+    ]
+  },
+
+  chain1: {
+    name: "Red Chain",
+    originalPrice: 499,
+    discount: 5,
+    desc: "Beautiful red chain jewellery piece.",
+    images: [
+      "chain2.png"
+    ]
+  },
+
+  sareeQuick: {
+    name: "Yellow Saree",
+    originalPrice: 300,
+    discount: 5,
+    desc: "Simple and elegant yellow saree.",
+    images: [
+      "saree1.png"
+    ]
+  },
+
+
   saree1: {
     name: "Elegant Silk Saree",
     originalPrice: 300,
