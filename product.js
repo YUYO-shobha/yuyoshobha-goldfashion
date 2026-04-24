@@ -36,6 +36,18 @@ const products = {
       "images/saree3-2.jpg",
       "images/saree3-3.jpg"
     ]
+  },
+
+      saree4: {
+    name: "Pink cotton Saree",
+    originalPrice: 8000,
+    discount: 50,
+    desc: "Betibul light white pink cotton saree.",
+    images: [
+      "images/saree4-1.jpg",
+      "images/saree4-2.jpg",
+      "images/saree4-3.jpg"
+    ]
   }
 };
 
