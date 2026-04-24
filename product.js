@@ -13,7 +13,6 @@ const products = {
     ]
 },
 
-
     saree2: {
     name: "Mangalagiri Pattu Saree",
     originalPrice: 5000,
