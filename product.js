@@ -75,7 +75,7 @@ originalPrice: 4000,
     ]
   },
 
-  jewel3: {
+  earings1: {
     name: "Earrings",
     originalPrice: 1500,
     discount: 5,
