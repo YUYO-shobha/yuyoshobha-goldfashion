@@ -69,7 +69,9 @@ originalPrice: 4000,
     discount: 2,
     desc: "Elegant gold necklace for special occasions.",
     images: [
-      "images/necklace1-1.jpg"
+      "images/necklace1-1.jpg",
+      "images/necklace1-2.jpg",
+      "images/necklace1-3.jpg"
     ]
   },
 
@@ -79,8 +81,9 @@ originalPrice: 4000,
     discount: 5,
     desc: "Stylish and elegant earrings for all occasions.",
     images: [
-      "images/jewel3-1.jpg",
-      "images/jewel3-2.jpg"
+      "images/earings1-1.jpg",
+      "images/earings1-2.jpg",
+      "images/earings1-3.jpg"
     ]
   }
 
