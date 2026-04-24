@@ -76,7 +76,7 @@ originalPrice: 4000,
   },
 
   earings1: {
-    name: "Earrings",
+    name: "Earings",
     originalPrice: 1500,
     discount: 5,
     desc: "Stylish and elegant earrings for all occasions.",
