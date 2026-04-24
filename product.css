@@ -82,22 +82,25 @@
     position: relative;
 }
 
-.product-card .image-box {
+.product-card .image-box,
+.card .image-box {
     width: 100%;
     height: 220px;
     overflow: hidden;
     border-radius: 8px;
 }
 
-.product-card .image-box img {
+.product-card .image-box img,
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block !important;
+    display: block;
     transition: transform 0.3s ease;
 }
 
-.product-card .image-box img:hover {
+.product-card .image-box img:hover,
+.card img:hover {
     transform: scale(1.05);
 }
 #mainImg{
