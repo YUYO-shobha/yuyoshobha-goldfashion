@@ -52,6 +52,7 @@ const products = {
   saree5: {
   name: "Banaras Saree",
   price: 4000,
+  discount: 00,
   desc: "Beautiful light-weight Banarasi saree.",
   images: [
     "images/saree5-1.jpg",
