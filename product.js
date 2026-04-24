@@ -86,7 +86,6 @@ originalPrice: 4000,
       "images/earings1-3.jpg"
     ]
   }
-
 };
 
 
