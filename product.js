@@ -81,8 +81,8 @@ originalPrice: 4000,
     discount: 5,
     desc: "Stylish and elegant earrings for all occasions.",
     images: [
-      "images/earings1-1.jpg",
-      "images/earings1-2.jpg",
+      "images/earings1-3.jpg",
+      "images/earings1-3.jpg",
       "images/earings1-3.jpg"
     ]
   }
