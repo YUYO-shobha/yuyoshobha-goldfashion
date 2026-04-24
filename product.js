@@ -48,7 +48,18 @@ const products = {
       "images/saree4-2.jpg",
       "images/saree4-3.jpg"
     ]
-  }
+  },
+
+  saree5: {
+  name: "Banaras Saree",
+  price: 4000,
+  desc: "Beautiful light-weight Banarasi saree.",
+  images: [
+    "images/saree5-1.jpg",
+    "images/saree5-2.jpg",
+    "images/saree5-3.jpg"
+  ]
+}
 };
 
 
