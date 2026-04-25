@@ -69,7 +69,7 @@ originalPrice: 4000,
     discount: 2,
     desc: "Elegant gold necklace for special occasions.",
     images: [
-      "images/necklace1-1.jpg",
+      "images/necklace1-1.png",
       "images/necklace1-2.jpg",
       "images/necklace1-3.jpg"
     ]
