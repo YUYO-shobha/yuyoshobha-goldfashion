@@ -85,6 +85,17 @@ originalPrice: 4000,
       "images/earings1-3.jpg",
       "images/earings1-3.jpg"
     ]
+  },
+  chain1: {
+    name: "chain",
+    originalPrice: 1500,
+    discount: 5,
+    desc: "Stylish and elegant chain for  for all occasions.",
+    images: [
+      "images/chain1-1.jpg",
+      "images/chain1-2.jpg",
+      "images/chain1-3.jpg"
+    ]
   }
 };
 
