@@ -7,9 +7,9 @@ const products = {
     discount: 20,
     desc: "Premium silk saree perfect for weddings and parties.",
     images: [
-      "images/saree-1.png",
-      "images/saree-2.png",
-      "images/saree-3.png"
+      "images/saree-1.jpg",
+      "images/saree-2.jpg",
+      "images/saree-3.jpg"
     ]
 },
 
@@ -19,9 +19,9 @@ const products = {
     discount: 15,
     desc: "Traditional handwoven Mangalagiri silk saree with rich texture and elegance.",
     images: [
-      "images/saree2-1.png",
-      "images/saree2-2.png",
-      "images/saree2-3.png"
+      "images/saree2-1.jpg",
+      "images/saree2-2.jpg",
+      "images/saree2-3.jpg"
     ]
   },
 
