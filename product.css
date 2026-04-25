@@ -271,3 +271,15 @@
     height: 100% !important;
     object-fit: cover !important;
 }
+
+/* FORCE FIX */
+.product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.product-card .image-box {
+    height: 250px !important;
+    overflow: hidden;
+}
