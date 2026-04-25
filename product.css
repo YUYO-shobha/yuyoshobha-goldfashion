@@ -255,3 +255,19 @@
         grid-template-columns:1fr;
     }
 }
+
+
+
+.product-card .image-box {
+    border: 5px solid red !important;
+}
+
+.product-card .image-box {
+    height: 250px !important;
+}
+
+.product-card .image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
