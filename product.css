@@ -112,27 +112,27 @@
    IMAGE STYLE (FIXED SIZE)
 ======================= */
 
-.product-card .image-box,
-.card img{
+/* 1. Image container (box) */
+.product-card .image-box{
     width:100%;
-    height:250px; /* SAME HEIGHT FOR ALL */
+    height:250px;
     overflow:hidden;
     border-radius:8px;
     background:#f5f5f5;
     position:relative;
 }
 
-.product-card .image-box img,
-.card img{
+/* 2. Image inside box */
+.product-card .image-box img{
     width:100%;
     height:100%;
-    object-fit:cover; /* CHANGE TO 'contain' IF YOU WANT FULL IMAGE */
+    object-fit:cover;
     display:block;
     transition:transform 0.3s ease;
 }
 
-.product-card .image-box img:hover,
-.card img:hover{
+/* 3. Hover effect */
+.product-card .image-box img:hover{
     transform:scale(1.05);
 }
 
