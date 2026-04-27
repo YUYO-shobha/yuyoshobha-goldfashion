@@ -2,10 +2,10 @@ window.onload = function(){
 
 const products = {
   saree1: {
-    name: "Elegant Silk Saree",
+    name: "Red Silk Saree for Wedding",
     originalPrice: 300,
     discount: 20,
-    desc: "Premium silk saree perfect for weddings and parties.",
+    desc: "Elegant red silk saree with gold border, perfect for weddings, festivals, and special occasions.",
     images: [
       "images/saree-1.jpg",
       "images/saree-2.jpg",
