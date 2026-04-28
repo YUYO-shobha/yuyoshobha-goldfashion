@@ -1,17 +1,18 @@
 
 function filterProducts(category) {
-    const products = document.querySelectorAll('.products .card');
+    const products = document.querySelectorAll('.products .product-card');
     products.forEach(card => {
         card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
     });
 }
 
 function searchProducts() {
-    const input = document.getElementById('searchBox').value.toLowerCase();
-    const products = document.querySelectorAll('.products .card');
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const products = document.querySelectorAll('.products .product-card');
+
     products.forEach(card => {
-        const name = card.querySelector('p,h4').innerText.toLowerCase();
-        card.style.display = name.includes(input) ? 'block' : 'none';
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? 'block' : 'none';
     });
 }
 
