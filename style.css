@@ -146,8 +146,8 @@ body {
 /* PRODUCTS */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
     padding: 10px;
 }
 
@@ -244,11 +244,6 @@ body {
 }
 
     /* Product card section*/
-
-.product-card {
-    width: 100%;
-    max-width: 200px;
-}
 
 .product-card img{
     width:100%;
