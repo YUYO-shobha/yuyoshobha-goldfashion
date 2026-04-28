@@ -109,9 +109,21 @@ body {
         margin-top: 10px;
     }
 
+@media (max-width: 768px) {
+
     .navbar {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
         gap: 10px;
+        padding: 10px;
+        justify-content: flex-start;
+    }
+
+    .navbar a {
+        flex: 0 0 auto;
+        font-size: 14px;
     }
 }
 
@@ -191,24 +203,23 @@ body {
 /* CATEGORY SECTION */
 .category-section {
     display: flex;
-    flex-direction: row;        /* horizontal */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    padding: 20px;
+    gap: 15px;
+    padding: 15px;
     background: #f8f8f8;
-    flex-wrap: wrap;           /* responsive */
 }
 
 .category-item {
+    width: 45%;
     text-align: center;
 }
 
 .category-item img {
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
-    transition: 0.3s;
 }
 
 .category-item img:hover {
@@ -233,12 +244,11 @@ body {
 
     /* Product card section*/
 
-.product-card{
-    width:200px;
-    background:white;
-    padding:10px;
-    cursor:pointer;
+.product-card {
+    width: 100%;
+    max-width: 200px;
 }
+
 .product-card img{
     width:100%;
 }
@@ -390,4 +400,25 @@ body {
     margin-top: 15px;
     border-radius: 10px;
     text-align: left;
+}
+
+/* ===== MOBILE IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+
+    .logo-section img {
+        height: 50px;
+    }
+
+    .brand-name h1 {
+        font-size: 18px;
+    }
+
+    .brand-name p {
+        font-size: 12px;
+    }
+
+    .header-icons {
+        margin-top: 5px;
+    }
+
 }
