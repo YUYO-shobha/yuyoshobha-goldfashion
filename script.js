@@ -8,11 +8,16 @@ function filterProducts(category) {
 
 function searchProducts() {
     const input = document.getElementById('searchInput').value.toLowerCase();
-    const products = document.querySelectorAll('.products .product-card');
+    const products = document.querySelectorAll('.product-card');
 
     products.forEach(card => {
         const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(input) ? 'block' : 'none';
+
+        if (text.includes(input)) {
+            card.style.display = "";   // keeps original layout
+        } else {
+            card.style.display = "none";
+        }
     });
 }
 
