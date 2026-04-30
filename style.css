@@ -184,9 +184,6 @@ body {
     object-fit: cover;
 }
 
-.products > * {
-    width: 100%;
-}
 
 /* BUTTON */
 .btn {
