@@ -148,7 +148,17 @@ body {
     max-height: 650px;   /* 👈 add this line */
     display: block;
 }
-    
+
+/* =========================
+   PRODUCTS GRID (DESKTOP)
+========================= */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
 /* =========================
    PRODUCT CARD
 ========================= */
@@ -172,6 +182,10 @@ body {
     width: 100%;
     height: 180px;
     object-fit: cover;
+}
+
+.products > * {
+    width: 100%;
 }
 
 /* BUTTON */
