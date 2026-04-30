@@ -218,17 +218,26 @@ body {
 }
 
 /* CATEGORY SECTION */
+/* =========================
+   HORIZONTAL CATEGORY SCROLL
+========================= */
+
 .category-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
     gap: 15px;
     padding: 15px;
-    background: #f8f8f8;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar (optional) */
+.category-section::-webkit-scrollbar {
+    display: none;
 }
 
 .category-item {
-    width: 45%;
+    min-width: 120px;
+    flex-shrink: 0;
     text-align: center;
 }
 
@@ -251,9 +260,8 @@ body {
 /* MOBILE */
 @media (max-width: 768px) {
     .banner-img {
-        max-height: 250px;   /* safe resize */
+        max-height: 250px;
     }
-}
 
     .banner-overlay h1 {
         font-size: 18px;
