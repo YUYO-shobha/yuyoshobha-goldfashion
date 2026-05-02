@@ -144,12 +144,16 @@ function showSuggestions() {
 }
 
 /* ===== CATEGORY CLICK SCROLL ===== */
-document.querySelectorAll(".category-item a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll(".category-item a").forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            target.scrollIntoView({ behavior: "smooth" });
+        });
     });
+
 });
 
 /* ===== ACTIVE CATEGORY ON SCROLL ===== */
