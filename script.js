@@ -111,4 +111,36 @@ function displayReview(review) {
     document.getElementById("review-list").appendChild(reviewBox);
 }
 
+function showSuggestions() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const products = document.querySelectorAll(".product-card");
+    const box = document.getElementById("suggestionBox");
+
+    box.innerHTML = "";
+
+    if (input === "") {
+        box.style.display = "none";
+        return;
+    }
+
+    products.forEach(product => {
+        const name = product.querySelector("h3").innerText;
+
+        if (name.toLowerCase().includes(input)) {
+            let div = document.createElement("div");
+            div.classList.add("suggestion-item");
+            div.innerText = name;
+
+            div.onclick = function() {
+                product.scrollIntoView({ behavior: "smooth" });
+                box.style.display = "none";
+            };
+
+            box.appendChild(div);
+        }
+    });
+
+    box.style.display = "block";
+}
+
 
