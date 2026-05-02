@@ -43,6 +43,10 @@ body {
     justify-content: space-between;
     padding: 10px 30px;
     flex-wrap: wrap;
+
+    position: sticky;   /* ✅ ADD THIS */
+    top: 0;             /* ✅ ADD THIS */
+    z-index: 1000;      /* ✅ ADD THIS */
 }
 
 /* LOGO */
@@ -84,6 +88,10 @@ body {
     gap: 40px;
     padding: 12px;
     border-top: 1px solid #333;
+
+    position: sticky;   /* ✅ add this */
+    top: 80px;          /* ✅ adjust if needed */
+    z-index: 999;       /* ✅ add this */
 }
 
 .navbar a {
@@ -221,10 +229,7 @@ body {
 /* ===== PREMIUM CATEGORY SECTION ===== */
 
 .category-wrapper {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    z-index: 1000;
+    position: relative;   /* 👈 change this */
     padding: 25px 0;
 }
 
