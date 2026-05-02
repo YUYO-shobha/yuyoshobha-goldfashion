@@ -143,4 +143,46 @@ function showSuggestions() {
     box.style.display = "block";
 }
 
+/* ===== CATEGORY CLICK SCROLL ===== */
+document.querySelectorAll(".category-item a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
+    });
+});
 
+/* ===== ACTIVE CATEGORY ON SCROLL ===== */
+const sections = document.querySelectorAll("section[id]");
+const items = document.querySelectorAll(".category-item");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+
+        if (pageYOffset >= top && pageYOffset < top + height) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    items.forEach(item => {
+        item.classList.remove("active");
+        const link = item.querySelector("a");
+
+        if (link && link.getAttribute("href") === "#" + current) {
+            item.classList.add("active");
+        }
+    });
+});
+
+/* ===== AUTO SLIDER BUTTONS ===== */
+function scrollCategory(direction) {
+    const container = document.querySelector(".category-section");
+    container.scrollBy({
+        left: direction * 200,
+        behavior: "smooth"
+    });
+}
