@@ -1,16 +1,22 @@
 function filterProducts(category) {
-    const products = document.querySelectorAll('.products .card');
+   const products = document.querySelectorAll('.product-card');
     products.forEach(card => {
         card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
     });
 }
 
 function searchProducts() {
-    const input = document.getElementById('searchBox').value.toLowerCase();
-    const products = document.querySelectorAll('.products .card');
-    products.forEach(card => {
-        const name = card.querySelector('p,h4').innerText.toLowerCase();
-        card.style.display = name.includes(input) ? 'block' : 'none';
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        const name = product.querySelector('h3').innerText.toLowerCase();
+
+        if (name.includes(input)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
     });
 }
 
